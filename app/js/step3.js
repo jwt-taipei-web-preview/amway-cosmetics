@@ -25,6 +25,7 @@ app.partial.step3 = function(page){
 	});
 
 	$(page).on('page:in', function(){
+		phone = '';
 		$('.field input', page).val('');
 	});
 	function phoneUpdate(key){
