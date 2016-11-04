@@ -7,75 +7,69 @@
 /*global  $ */
 var app = {};
 app.partial = {};
+app.pages = {};
 
 // var dayOfMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 // 網址為 gulp 或者 github 時 設定成debug 模式
 var debug = /localhost[:]9000|nelson119.github.io/.test(location.href);
 
-var share = {
-	facebook: function(href, title){
-		href = encodeURIComponent(href || location.href + '?utm_source=facebook&utm_medium=fbshare_m&utm_campaign=roseanni');
-		title = encodeURIComponent(title || document.title);
-		window.open('https://www.facebook.com/sharer.php?u='+href+'&amp;t='+title);
-	},
-	googleplus: function(href){
-		href = encodeURIComponent(href || location.href + '?utm_source=g+&utm_medium=fbshare_m&utm_campaign=roseanni');
-		window.open('https://plus.google.com/share?url=' + href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
-	},
-	email: function(href, title){
-		href = encodeURIComponent(href || location.href + '?utm_source=email&utm_medium=fbshare_m&utm_campaign=roseanni');
-		title = encodeURIComponent(title || document.title);
-		var body = encodeURIComponent(''+href+' #' +title+'');
-		window.open('https://mail.google.com/mail/?view=cm&fs=1&to=&su=與你分享:'+title+'&body='+body+'&bcc=');
-	}
-};
-
 
 $(function(){
     // 定義每個section
 	$.each(app.partial, function(name, init){
-		init();
+		init($('#'+name));
+		$('.page:eq(0)').addClass('init');
     });
 
 
 
 	//觸發第一次調整頁面尺寸
 	$(window).trigger('resize');
-	//分享按鈕
 
-	$('.share .facebook').on('click', function(e){
-		share.facebook();
-
-		e.stopPropagation();
-
-		e.preventDefault();
-
-		return false;
+	var imagePreload = {}, elements = [];
+	$('[data-src]').each(function(idx, ele){
+		if($(ele).attr('data-src')){
+			imagePreload[$(ele).attr('data-src')] = false;
+			elements.push(ele);
+		}
 	});
 
-	$('.share .googleplus').on('click', function(e){
-		share.googleplus();
+	$.each(imagePreload, function(src, stat){
+		var img = new Image();
+		img.onload = function(){
+			imagePreload[src] = true;
+			var alldone = true;
+			$.each(imagePreload, function($s, $done){
+				alldone = $done && alldone;
+			});
+			// //載入後 加到背景
+			// $(background[src]).css('background-image', 'url(' + src + ')');
 
-		e.stopPropagation();
 
-		e.preventDefault();
 
-		return false;
+			if(alldone){
+				//全部圖片下載完成
+				imageLoaded();
+			}
+		};
+		img.src = src;
 	});
 
-	$('.share .email').on('click', function(e){
-		share.email();
+	function imageLoaded(){
+		$.each(elements, function(index, ele){
+			$(ele).attr('src', $(ele).attr('data-src'));
+		});
 
-		e.stopPropagation();
-
-		e.preventDefault();
-
-		return false;
-	});
-
+		$('.page:eq(0)').addClass('init');
+	}
 });
 
+function goto(page){
+	$('#' + page).addClass('in')
+		.siblings().removeClass('in init');
+	$('#' + page).trigger('page:in');
+}
 
 
 

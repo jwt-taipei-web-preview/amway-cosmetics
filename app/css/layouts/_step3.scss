@@ -1,0 +1,98 @@
+#step3{
+	.field{
+		@include Item(1632, 224, 908, 0, 1088, 0);
+		input{
+			@include SubItem();
+			background: none;
+			border: 0;
+			font-family:Arial;
+			font-size: vw3840(100);
+			color:white;
+			text-align: center;
+			letter-spacing: vw3840(4);
+		}
+	}
+	.keypad{
+		.key{
+			&:hover{
+				&:after{
+					border-radius: 50%;
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					content: '';
+					background: #A99761;
+					opacity: 0.5;
+					transition: 0.3s;
+				}
+				&:focus{
+					background: none;
+				}
+			}
+			@include Item(228, 228, 1209, 0, 1088, 0);
+			&.key2{
+				@include Item(228, 228, 1209, 0, 1370, 0);
+			}
+			&.key3{
+				@include Item(228, 228, 1209, 0, 1657, 0);
+			}
+			&.key4{
+				@include Item(228, 228, 1209, 0, 1943, 0);
+			}
+			&.key5{
+				@include Item(228, 228, 1209, 0, 2224, 0);
+			}
+			&.key6{
+				@include Item(228, 228, 1209, 0, 2505, 0);
+			}
+			&.key7{
+				@include Item(228, 228, 1501, 0, 1088, 0);
+			}
+			&.key8{
+				@include Item(228, 228, 1501, 0, 1370, 0);
+			}
+			&.key9{
+				@include Item(228, 228, 1501, 0, 1657, 0);
+			}
+			&.key0{
+				@include Item(228, 228, 1501, 0, 1943, 0);
+			}
+			&.keyx{
+				@include Item(228, 228, 1501, 0, 2224, 0);
+			}
+			&.keyclear{
+				@include Item(228, 228, 1501, 0, 2505, 0);
+			}
+		}
+		.submit{
+			@include Item(1088, 203, 2179, 0, 1376, 0);
+		}
+	}
+
+	.alert{
+		@include SubItem();
+		z-index: 10;
+		background: url(../img/alert.jpg) center/ lp(1470) auto no-repeat rgba(0,0,0,0.7);
+		@include animation(
+			page-out 0.5s 1 linear forwards
+		);
+
+		.ok{
+			@include Item(447, 202, 237, 0, 1708, 0);
+			margin-top: calc(50vh + #{lp(285)});
+		}
+		.dismiss{
+			@include Item(180, 180, 1675, 0, 2428, 0);
+			margin-top: calc(50vh + #{lp(-633)});
+		}
+
+		&.in{
+
+			@include animation(
+				page-in 0.5s 1 linear forwards
+			);
+		}
+	}
+}

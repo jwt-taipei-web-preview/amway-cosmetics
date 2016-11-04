@@ -10,6 +10,11 @@
   @return #{$pixels/$context*100}vw;
 }
 
+@function vw3840($pixels, $context: 3840) {
+  @return #{$pixels/$context*100}vw;
+}
+
+
 @for $i from 6 to 150 {
 	.fontsize-#{$i} {
 		font-size: #{$i}px;
@@ -24,7 +29,23 @@
 	}
 }
 
-@mixin xsSubItem() {
+@mixin keyframes($animationName)
+{
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName}  {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin SubItem() {
 	position: absolute;
 	top:0;
 	left:0;
@@ -32,34 +53,38 @@
 	height: 100%;	
 }
 
-@mixin xsItem($width, $height, $top, $bottom, $left, $right, $context: $browser-xs-viewport) {
+@function lp($pixels, $context: 3840){
+	@return percentage($pixels/$context);
+}
+
+@mixin Item($width, $height, $top, $bottom, $left, $right) {
 	margin: 0;
-	width: xsp($width);
+	width: lp($width);
 	height: 0;
 	position: absolute;
-	padding-top: xsp($height);
+	padding-top: lp($height);
 
 	@if($left > 0) {
-		margin-left: xsp($left);
+		margin-left: lp($left);
 		left: 0;
 		right: 0;
-		margin-right: xsp($right);
+		margin-right: lp($right);
 		z-index: 2;
 	}@else{
 		right: 0;
 		left: auto;
-		margin-right: xsp($right);
+		margin-right: lp($right);
 		z-index: 1;
 	}
 	@if($top > 0) {
 		top: 0;
 		bottom: 0;
-		margin-top: xsp($top);
-		margin-bottom: xsp($bottom);
+		margin-top: lp($top);
+		margin-bottom: lp($bottom);
 	}@else{
 		bottom: 0;
 		top: auto;
-		margin-bottom: xsp($bottom);
+		margin-bottom: lp($bottom);
 	}
 }
 .vertical-top{
