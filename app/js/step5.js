@@ -23,10 +23,12 @@ app.partial.step5 = function(page){
 			}
 		});
 		var sec = 20;
-		for(var i=20; i>=0; i--){
+		for(var i=20; i>0; i--){
 			tl.addPause('+=' + 1, function(){
 				sec--;
-				$('.countdown .secs span', page).html(sec);
+				if(sec >= 0){
+					$('.countdown .secs span', page).html(sec);
+				}
 				tl.play();
 			});
 		}
@@ -34,6 +36,7 @@ app.partial.step5 = function(page){
 		$('.dismiss, .ok', page).one('click', function(){
 			dismissCountdown();
 			tl.stop();
+			next(3);
 		});
 	});
 	function next(sec){
@@ -42,7 +45,7 @@ app.partial.step5 = function(page){
 			if($('.agree.checked').length){
 				// goto('step6');
 			}else{
-
+				showCountdown();
 			}
 		}, sec * 1000);
 	}
