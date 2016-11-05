@@ -6,15 +6,21 @@
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
 /*global app, $, goto, TimelineMax */
 app.partial.step5 = function(page){
-	$('.terms').niceScroll();
+	// $('.terms article').niceScroll();
+	$('.terms article').mCustomScrollbar();
+	// $('.terms article').on('mousewheel', function(e){
+	// 	e.stopPropagation();
+	// 	e.preventDefault();
+	// 	console.log(e);
+	// });
 	var selectTimeout = 0;
 	$('.agree, .disagree').on('click', function(){
 		$(this).addClass('checked').siblings().removeClass('checked');
 		next(3);
 	});
-	$(page).on('page:in', function(){
-		next(40);
-	});
+	// $(page).on('page:in', function(){
+		// next(40);
+	// });
 	$('.countdown', page).on('page:in', function(){
 		var tl = new TimelineMax({
 			paused: true,

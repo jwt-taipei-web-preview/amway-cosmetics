@@ -4,14 +4,18 @@
 
 		article{
 			@include SubItem();
-			padding: lp(130) lp(100);
-			color: #b89d5b;
-			line-height: 1.8em;
-			height: auto;
-			font-weight: 300;
-			font-size: vw3840(58);
 			-webkit-overflow-scrolling: touch;
+			overflow: auto;
+			padding: lp(130) lp(100);
+			aside{
+				color: #b89d5b;
+				line-height: 1.8em;
+				height: auto;
+				font-weight: 300;
+				font-size: vw3840(58);
+			}
 		}
+		-webkit-overflow-scrolling: touch;
 	}
 
 	.agree{
@@ -34,12 +38,16 @@
 			}
 		}
 	}
-	.nicescroll-cursors{
-		border: 0!important;
+	.mCSB_dragger_bar{
+		background: rgba(0,0,0,0.75);
+	}
+	.mCSB_1_scrollbar{
+		// transform: scale(0.9);
 	}
 
 	.countdown{
 		@include SubItem();
+		position:fixed;
 		z-index: 10;
 		background: url(../img/countdown.jpg) center/ lp(1470) auto no-repeat rgba(0,0,0,0.7);
 

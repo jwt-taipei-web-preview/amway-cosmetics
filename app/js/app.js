@@ -66,9 +66,10 @@ $(function(){
 });
 
 function goto(page){
-	$('#' + page).addClass('in')
-		.siblings().removeClass('in init');
-	$('#' + page).trigger('page:in');
+	// $('#' + page).addClass('in')
+	// 	.siblings().removeClass('in init');
+	// $('#' + page).trigger('page:in');
+	location.href = page + '.html';
 }
 
 

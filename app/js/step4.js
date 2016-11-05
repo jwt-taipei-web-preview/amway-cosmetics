@@ -11,9 +11,9 @@ app.partial.step4 = function(page){
 		clearTimeout(timeout);
 		goto('index');
 	});
-	$(page).on('page:in', function(e){
+	// $(page).on('page:in', function(e){
 		timeout = setTimeout(function(){
 			goto('step5');
 		}, 5000);
-	});
+	// });
 };
