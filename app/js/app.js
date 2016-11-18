@@ -55,6 +55,9 @@ $(function(){
 		};
 		img.src = src;
 	});
+	if(!$(imagePreload).hasAttr()){
+		imageLoaded();
+	}
 
 	function imageLoaded(){
 		$.each(elements, function(index, ele){
@@ -76,11 +79,20 @@ function goto(page){
 
 //判斷是否具有屬性
 $.fn.hasAttr = function(attributeName){
-	var attr = $(this).attr(attributeName);
-	if (typeof attr !== typeof undefined && attr !== false) {
-		return true;
+	if(attributeName){
+		var attr = $(this).attr(attributeName);
+		if (typeof attr !== typeof undefined && attr !== false) {
+			return true;
+		}else{
+			return false;
+		}
 	}else{
-		return false;
+		var has = false;
+		$.each(this[0], function(){
+			has = true;
+			return false;
+		});
+		return has;
 	}
 };
 

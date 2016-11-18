@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>彩妝模擬</title>
+    <title>體重管理</title>
 
-    <meta property="og:title" content="彩妝模擬"/>
+    <meta property="og:title" content="體重管理"/>
     <meta property="og:description" content=""/>
     <meta property="og:url" content=""/>
     <meta property="og:image" content=""/>
@@ -38,9 +38,18 @@
       <!--step1-->
       <section id="step1" class="page">
         <figure class="background">
-          <img data-src="img/step-1.jpg">
-          <a id="yes" href="javascript:"><img data-src="img/yes.png"></a>
-          <a id="no" href="javascript:"><img data-src="img/no.png"></a>
+            <img src="img/step-1.jpg">
+            <h3 class="question text-center fontsize-45">
+                <span>是否為安麗直銷商/會員?</span>
+            </h3>
+            <a class="text-center fontsize-40" id="yes" href="step2.html">
+                <img src="img/yes.png"><img class="hover" src="img/yes-hover.png">
+                <span>是</span>
+            </a>
+            <a class="text-center fontsize-40" id="no" href="step3.html">
+                <img src="img/no.png"><img class="hover" src="img/no-hover.png">
+                <span>否</span>
+            </a>
         </figure>
       </section>
       <!--./step1-->
@@ -75,7 +84,7 @@
     <script src="js/app.js"></script>
     <!-- endbuild -->
     <!-- build:js js/step1.js -->
-    <script src="js/step1.js"></script>
+    <!-- <script src="js/step1.js"></script> -->
     <!-- endbuild -->
   </body>
 </html>

@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>彩妝模擬</title>
+    <title>體重管理</title>
 
-    <meta property="og:title" content="彩妝模擬"/>
+    <meta property="og:title" content="體重管理"/>
     <meta property="og:description" content=""/>
     <meta property="og:url" content=""/>
     <meta property="og:image" content=""/>
@@ -39,31 +39,34 @@
       <!--step3-->
       <section id="step3" class="page">
         <figure class="background">
-          <img data-src="img/step-3.jpg">
-          <aside class="field">
-            <input type="tel" maxlength="10">
-          </aside>
-          <aside class="keypad">
-            <a data-key="1" class="key key1" href="javascript:"></a>
-            <a data-key="2" class="key key2" href="javascript:"></a>
-            <a data-key="3" class="key key3" href="javascript:"></a>
-            <a data-key="4" class="key key4" href="javascript:"></a>
-            <a data-key="5" class="key key5" href="javascript:"></a>
-            <a data-key="6" class="key key6" href="javascript:"></a>
-            <a data-key="7" class="key key7" href="javascript:"></a>
-            <a data-key="8" class="key key8" href="javascript:"></a>
-            <a data-key="9" class="key key9" href="javascript:"></a>
-            <a data-key="0" class="key key0" href="javascript:"></a>
-            <a data-key="x" class="key keyx" href="javascript:"></a>
-            <a data-key="clear" class="key keyclear" href="javascript:"></a>
-            <a class="submit" href="javascript:"></a>
-          </aside>
-          <aside class="alert">
-            <a class="dismiss" href="javascript:"></a>
-            <a class="ok" href="javascript:"></a>
-          </aside>
-
+          <img src="img/step-3.jpg">
         </figure>
+      <aside class="field">
+        <input class="fontsize-40" type="tel" maxlength="10">
+      </aside>
+      <aside class="keypad">
+        <a data-key="1" class="key vertical-middle text-center fontsize-75 key1" href="javascript:"><span>1</span></a>
+        <a data-key="2" class="key vertical-middle text-center fontsize-75 key2" href="javascript:"><span>2</span></a>
+        <a data-key="3" class="key vertical-middle text-center fontsize-75 key3" href="javascript:"><span>3</span></a>
+        <a data-key="4" class="key vertical-middle text-center fontsize-75 key4" href="javascript:"><span>4</span></a>
+        <a data-key="5" class="key vertical-middle text-center fontsize-75 key5" href="javascript:"><span>5</span></a>
+        <a data-key="6" class="key vertical-middle text-center fontsize-75 key6" href="javascript:"><span>6</span></a>
+        <a data-key="7" class="key vertical-middle text-center fontsize-75 key7" href="javascript:"><span>7</span></a>
+        <a data-key="8" class="key vertical-middle text-center fontsize-75 key8" href="javascript:"><span>8</span></a>
+        <a data-key="9" class="key vertical-middle text-center fontsize-75 key9" href="javascript:"><span>9</span></a>
+        <a data-key="0" class="key vertical-middle text-center fontsize-75 key0" href="javascript:"><span>0</span></a>
+        <a data-key="x" class="key vertical-middle text-center fontsize-75 keyx" href="javascript:">
+            <img src="img/phone-x.png">
+            <img class="hover" src="img/phone-x-hover.png">
+        </a>
+        <a data-key="submit" class="key fontsize-35 submit" href="javascript:"><span class="vertical-middle text-center">確認</span></a>
+      </aside>
+      <aside class="alert in">
+        <p class="vertical-middle text-center fontsize-31"><span>請輸入正確電話號碼<br>此服務僅接受台灣手機號碼</span> </p>
+        <a class="dismiss" href="javascript:"><img src="img/alert-x.png"></a>
+        <a class="ok fontsize-35 text-center" href="javascript:"><span>確定</span></a>
+      </aside>
+
       </section>
       <!--./step3-->
 
@@ -96,9 +99,6 @@
     
     <!-- build:js js/main.js -->
     <script src="js/app.js"></script>
-    <!-- endbuild -->
-    <!-- build:js js/step3.js -->
-    <script src="js/step3.js"></script>
     <!-- endbuild -->
   </body>
 </html>

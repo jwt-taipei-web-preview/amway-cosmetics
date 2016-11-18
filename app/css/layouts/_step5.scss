@@ -1,18 +1,22 @@
 #step5{
 	.terms{
-		@include Item(3400, 1520, 550, 0, 224, 0);
+		@include Item(1085, 474, 275, 0, 93, 0);
 
 		article{
 			@include SubItem();
 			-webkit-overflow-scrolling: touch;
 			overflow: auto;
-			padding: lp(130) lp(100);
+			padding: lp(35) lp(35);
+				background: #ececec;
+			h3{
+				color: #00631a;
+				font-weight: 300;
+			}
 			aside{
-				color: #b89d5b;
+				color: #2e2522;
 				line-height: 1.8em;
 				height: auto;
 				font-weight: 300;
-				font-size: vw3840(58);
 			}
 		}
 		-webkit-overflow-scrolling: touch;

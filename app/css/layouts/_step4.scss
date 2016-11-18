@@ -1,17 +1,22 @@
 #step4{
 	.gohome{
-		@include Item(1088, 203, 2179, 0, 2766, 0);
-	}
-	.name{
-		@include Item(1500, 203, 865, 0, 1300, 0);
-		color: #b89d5b;
-		font-weight: 300;
-		font-size: vw3840(125);
-		text-align: justify;
-		letter-spacing: vw3840(30);
-		line-height: 1em;
-		span{
+		@include Item(94, 94, 665, 0, 43, 0);
+		img{
 			@include SubItem();
+			&.hover{
+				opacity: 0;
+				transition-duration: 0.25s;
+			}
 		}
+		&:hover{
+			.hover{
+				opacity: 1;
+			}
+		}
+	}
+	.word{
+		@include SubItem();
+		color: #00631a;
+		font-weight: 300;
 	}
 }

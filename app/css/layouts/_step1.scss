@@ -1,13 +1,46 @@
 #step1{
 	#yes{
-		@include Item(493, 681, 1057, 0, 1236, 0);
+		color: #60821a;
+		@include Item(192, 193, 383, 0, 371, 0);
 		img{
 			@include SubItem();
+			&.hover{
+				opacity: 0;				
+			}
+			transition-duration: 0.25s;
+		}
+		span{
+			width: 100%;
+		}
+		&:hover{
+			img.hover{
+				opacity: 1;
+			}
 		}
 	}
 	#no{
-		@include Item(493, 681, 1057, 0, 2116, 0);
+		color: #60821a;
+		@include Item(192, 193, 383, 0, 696, 0);
 		img{
+			@include SubItem();
+			&.hover{
+				opacity: 0;				
+			}
+			transition-duration: 0.25s;
+		}
+		span{
+			width: 100%;
+		}
+		&:hover{
+			img.hover{
+				opacity: 1;
+			}
+		}
+	}
+	.question{
+		color: #00631a;
+		@include Item(1280, 0, 210, 0, 1, 0);
+		span{
 			@include SubItem();
 		}
 	}

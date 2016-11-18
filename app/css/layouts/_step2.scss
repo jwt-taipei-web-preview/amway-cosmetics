@@ -1,0 +1,42 @@
+#step2{
+	h3{
+		color: #00631a;
+		@include Item(1280, 0, 210, 0, 1, 0);
+		span{
+			@include SubItem();
+		}
+	}
+	.s1{
+		@include Item(200, 100, 413, 0, 197, 0);
+		span{
+			@include SubItem();
+			font-weight: 300;
+		}
+	}
+
+	.s2{
+		@include Item(200, 100, 413, 0, 681, 0);
+		span{
+			@include SubItem();
+			font-weight: 300;
+		}
+	}
+
+	.idonthave{
+		@include Item(359, 67, 693, 0, 879, 0);
+		color: #00631a;
+		border: 1px solid #006319;
+		cursor: pointer;
+
+		span{
+			@include SubItem();
+			height: 110%;
+			font-weight: 300;
+		}
+		&:hover{
+			transition-duration: 0.25s;
+			color: #fff;
+			background: #08651c;
+		}
+	}
+}

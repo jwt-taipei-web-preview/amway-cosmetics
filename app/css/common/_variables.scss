@@ -53,7 +53,7 @@
 	height: 100%;	
 }
 
-@function lp($pixels, $context: 3840){
+@function lp($pixels, $context: 1280){
 	@return percentage($pixels/$context);
 }
 
@@ -64,7 +64,7 @@
 	position: absolute;
 	padding-top: lp($height);
 
-	@if($left > 0) {
+	@if($left != 0) {
 		margin-left: lp($left);
 		left: 0;
 		right: 0;
@@ -76,7 +76,7 @@
 		margin-right: lp($right);
 		z-index: 1;
 	}
-	@if($top > 0) {
+	@if($top != 0) {
 		top: 0;
 		bottom: 0;
 		margin-top: lp($top);
