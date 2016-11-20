@@ -1,6 +1,28 @@
 #step5{
+	.word{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(1080, 0, 275, 0, 1, 0, 1080);
+			color: #00631a;
+			font-weight: 300;
+
+			span{
+				@include SubItem();
+			}
+		}
+	}
+	.avatar{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(138, 138, 266, 0, 172, 0, 1080);
+			img{
+				@include SubItem();
+			}
+		}
+	}
 	.terms{
 		@include Item(1085, 474, 275, 0, 93, 0);
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(801, 1041, 782, 0, 142, 0, 1080);
+		}
 
 		article{
 			@include SubItem();
@@ -17,28 +39,62 @@
 				line-height: 1.8em;
 				height: auto;
 				font-weight: 300;
+				@media screen and (max-width: #{$screen-md-num}px) {
+					line-height: 1.5;
+				}
 			}
 		}
 		-webkit-overflow-scrolling: touch;
 	}
 
 	.agree{
-		@include Item(296, 275, 2173, 0, 942, 0);
+		@include Item(420, 84, 154, 0, 87, 0);
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(461, 160, 520, 0, 61, 0, 1080);
+		}
 	}
 	.disagree{
-		@include Item(296, 275, 2173, 0, 2082, 0);
+		@include Item(420, 84, 154, 0, 691, 0);
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(461, 160, 520, 0, 601, 0, 1080);
+		}
 	}
 	.agree, .disagree{
-		figure{
+		label{
+			color: #00631a;
+			font-weight: 300;
+			line-height: 1;
 			@include SubItem();
-			background: url(../img/unchecked.png) 0 0/ auto 100% no-repeat;
-			&:after{
-				background-image: url(../img/checked.png);
+			padding-left: lp(80, 420);
+			@media screen and (max-width: #{$screen-md-num}px) {
+				line-height: 1.5;
 			}
 		}
-		&.checked{
-			figure{
-				background-image: url(../img/checked.png);
+		figure{
+			display: inline-block;
+			@include Item(80, 74, 1, 0, 1, 0, 420);
+			background: url(../img/unchecked.png) 0 0/ auto 100% no-repeat;
+			img{
+				@include SubItem();
+				opacity: 0;
+				transition-duration: 0.25s;
+				&.hover{
+					opacity: 0;
+				}
+			}
+		}
+		&:hover{
+			.hover{
+				opacity: 1;
+			}
+		}
+		input{
+			display: none;
+			&:checked ~ img{
+				opacity: 1;
+				&.hover{
+					opacity: 0;
+				}
 			}
 		}
 	}
@@ -53,32 +109,64 @@
 		@include SubItem();
 		position:fixed;
 		z-index: 10;
-		background: url(../img/countdown.jpg) center/ lp(1470) auto no-repeat rgba(0,0,0,0.7);
+		background: url(../img/countdown.png) center/ lp(446) auto no-repeat rgba(0,0,0,0.7);
 
+		@media screen and (max-width: #{$screen-md-num}px) {			
+			background: url(../img/countdown@32.png) center/ lp(801, 1080) auto no-repeat rgba(0,0,0,0.7);
+		}
 		@include animation(
 			page-out 0.5s 1 linear forwards
 		);
+		p{
+			@include SubItem();
+			color: #535353;
+		}
 
 		.ok{
-			@include Item(386, 183, 1675, 0, 1740, 0);
-			margin-top: calc(50vh + #{lp(395)});
-		}
-		.dismiss{
-			@include Item(180, 180, 1675, 0, 2428, 0);
-			margin-top: calc(50vh + #{lp(-633)});
-		}
-		.secs{
-			@include Item(365, 225, 1250, 0, 1734, 0);
-			margin-top: calc(50vh + #{lp(0)});
-			font-size: vw3840(318);
-			color: #6d5a33;
-			line-height: 1em;
-			font-weight: 700;
-			text-align: center;
-
+			@include Item(142, 61, 167, 0, 566, 0);
+			margin-top: calc(50vh + #{lp(167-40)});
+			@media screen and (max-width: #{$screen-md-num}px) {
+				@include Item(250, 100, 15, 0, 420, 0, 1080);
+				margin-top: calc(50vh + #{lp(210, 1080)});
+			}
+			color: #00631a;
 			span{
 				@include SubItem();
+				color: #00631a;
+				border: 3px solid #00631a;
 			}
+			&:hover{
+				span{
+					color: #fff;
+					background: #00631a;
+					transition-duration: 0.25s;
+				}
+			}
+		}
+		.dismiss{
+			@include Item(60, 60, 163, 0, 780, 0);
+			margin-top: calc(50vh + #{lp(-180)});
+			@media screen and (max-width: #{$screen-md-num}px) {
+				@include Item(98, 98, -163, 0, 800, 0, 1080);
+				margin-top: calc(50vh + #{lp(-330, 1080)});
+			}
+			img{
+				@include SubItem();
+				&.hover{
+					transition-duration: 0.25s;
+					opacity: 0;
+				}
+			}
+			&:hover{
+				.hover{
+					opacity: 1;
+				}
+			}
+		}
+		.secs{
+			color: #00631a;
+			line-height: 1em;
+			font-weight: 700;
 		}
 
 		&.in{

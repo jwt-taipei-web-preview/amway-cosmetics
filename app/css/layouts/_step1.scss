@@ -11,11 +11,15 @@
 		}
 		span{
 			width: 100%;
+			white-space: nowrap;
 		}
 		&:hover{
 			img.hover{
 				opacity: 1;
 			}
+		}
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(270, 270, 875, 0, 180, 0, 1080);
 		}
 	}
 	#no{
@@ -30,18 +34,80 @@
 		}
 		span{
 			width: 100%;
+			white-space: nowrap;
 		}
 		&:hover{
 			img.hover{
 				opacity: 1;
 			}
 		}
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(270, 270, 875, 0, 635, 0, 1080);
+		}
 	}
 	.question{
 		color: #00631a;
+		font-weight: 300;
 		@include Item(1280, 0, 210, 0, 1, 0);
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(1080, 0, 576, 0, 1, 0, 1080);
+			line-height: 1.8;
+		}
 		span{
 			@include SubItem();
+		}
+	}
+	.alert{
+		@include SubItem();
+		position:fixed;
+		z-index: 10;
+		background: url(../img/alert-long@32.jpg) center/ lp(801, 1080) auto no-repeat rgba(0,0,0,0.7);
+		@include animation(
+			page-out 0.5s 1 linear forwards
+		);
+		p{
+			@include SubItem();
+			color: #535353;
+		}
+		.yes,.no{
+			color: #00631a;
+			span{
+				@include SubItem();
+				color: #00631a;
+				border: 3px solid #00631a;
+			}
+			&:hover{
+				span{
+					color: #fff;
+					background: #00631a;
+					transition-duration: 0.25s;
+				}
+			}
+		}
+		.yes{
+			@include Item(250, 100, 15, 0, 273, 0, 1080);
+			margin-top: calc(50vh + #{lp(300, 1080)});
+		}
+		.no{
+			@include Item(250, 100, 15, 0, 574, 0, 1080);
+			margin-top: calc(50vh + #{lp(300, 1080)});
+		}
+		.dismiss{
+			@include Item(98, 98, -163, 0, 800, 0, 1080);
+			margin-top: calc(50vh + #{lp(-420, 1080)});
+			img{
+				@include SubItem();
+			}
+		}
+
+		&.in{
+
+			@include animation(
+				page-in 0.5s 1 linear forwards
+			);
+		}
+		@media screen and (min-width: #{$screen-lg-num}px) {
+			display: none;
 		}
 	}
 }

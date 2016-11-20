@@ -1,6 +1,9 @@
 #step4{
 	.gohome{
 		@include Item(94, 94, 665, 0, 43, 0);
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(143, 143, 1733, 0, 53, 0, 1080);
+		}
 		img{
 			@include SubItem();
 			&.hover{

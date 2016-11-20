@@ -1,0 +1,198 @@
+#step6{
+	color: #00631a;
+
+	.word{
+		@include Item(1280, 67, 150, 0, 1, 0, 1280);
+		font-weight: 300;
+
+		span{
+			@include SubItem();
+		}
+	}
+	.field{
+		.full{
+			@include SubItem();
+			background: none;
+			border: 0;
+			text-align: left;
+
+			input{
+				padding: 0 0.5em;
+				border: 3px solid #00631a;
+			}
+		}
+
+		&.gender{
+			@include Item(544, 82, 245, 0, 257, 0);	
+			input{
+				display: none;
+				&:checked + span{
+					color: #fff;
+					background: #00631a;
+				}
+			}
+			.check{
+				>span{
+					border: 3px solid #00631a;
+					font-weight: 300;
+					border-radius: 41px;
+					border-radius: vw3840(45, 1280);
+					transition-duration: 0.25s;
+					@include SubItem();
+				}
+
+				&.boy{
+
+					@include Item(169, 82, 1, 0, 149, 0, 544);
+
+				}
+				&.girl{
+					@include Item(169, 82, 1, 0, 375, 0, 544);
+
+				}
+			}
+		}
+
+		&.age{
+			@include Item(360, 67, 356, 0, 257, 0);
+
+			.input{
+				@include Item(205, 67, 1, 0, 164, 0, 360);
+			}
+			input{
+				border: 3px solid #00631a;
+				font-weight: 300;
+				transition-duration: 0.25s;
+				background: none;
+				padding: 0.1em 0.5em;
+				color: #00631a;				
+				@include SubItem();
+			}
+		}
+
+		&.tall{
+			@include Item(360, 67, 356, 0, 673, 0);
+			.input{
+				@include Item(205, 67, 1, 0, 164, 0, 360);
+			}
+			input{
+				border: 3px solid #00631a;
+				font-weight: 300;
+				transition-duration: 0.25s;
+				background: none;
+				padding: 0.1em 0.5em;
+				color: #00631a;
+				@include SubItem();
+			}
+		}
+	}
+	.keypad{
+		.key{
+			font-weight: 300;
+			color: #00631a;
+			span, img{
+				@include SubItem();
+				&.hover{
+					opacity: 0;
+				}
+			}
+			span{
+				border-radius: 50%;
+				border: 3px solid #00631a;
+				line-height: 130%;
+			}
+
+			&:hover{
+				span{
+					color: #fff;
+					background: #00631a;
+					transition-duration: 0.25s;
+				}
+				.hover{
+					opacity: 1;
+					transition-duration: 0.25s;
+				}
+			}
+			@include Item(110, 110, 452, 0, 240, 0);
+
+			&.key2{
+				@include Item(110, 110, 452, 0, 376, 0);
+			}
+			&.key3{
+				@include Item(110, 110, 452, 0, 513, 0);
+			}
+			&.key4{
+				@include Item(110, 110, 452, 0, 649, 0);
+			}
+			&.key5{
+				@include Item(110, 110, 452, 0, 786, 0);
+			}
+			&.key6{
+				@include Item(110, 110, 586, 0, 240, 0);
+			}
+			&.key7{
+				@include Item(110, 110, 586, 0, 376, 0);
+			}
+			&.key8{
+				@include Item(110, 110, 586, 0, 513, 0);
+			}
+			&.key9{
+				@include Item(110, 110, 586, 0, 649, 0);
+			}
+			&.key0{
+				@include Item(110, 110, 586, 0, 786, 0);
+			}
+			&.keyx{
+				@include Item(110, 110, 452, 0, 922, 0);
+			}
+			&.submit{
+				@include Item(110, 110, 586, 0, 922, 0);
+			}
+		}
+	}
+
+	.alert{
+		@include SubItem();
+		position:fixed;
+		z-index: 10;
+		background: url(../img/alert.jpg) center/ lp(484) auto no-repeat rgba(0,0,0,0.7);
+		@include animation(
+			page-out 0.5s 1 linear forwards
+		);
+		p{
+			@include SubItem();
+			color: #535353;
+		}
+		.ok{
+			@include Item(142, 61, 167, 0, 566, 0);
+			margin-top: calc(50vh + #{lp(167-40)});
+			color: #00631a;
+			span{
+				@include SubItem();
+				color: #00631a;
+				border: 3px solid #00631a;
+			}
+			&:hover{
+				span{
+					color: #fff;
+					background: #00631a;
+					transition-duration: 0.25s;
+				}
+			}
+		}
+		.dismiss{
+			@include Item(59, 60, -163, 0, 800, 0);
+			margin-top: calc(50vh + #{lp(-163-40)});
+			img{
+				@include SubItem();
+			}
+		}
+
+		&.in{
+
+			@include animation(
+				page-in 0.5s 1 linear forwards
+			);
+		}
+	}
+}

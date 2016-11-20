@@ -1,0 +1,159 @@
+#step52{
+	.word{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(1080, 0, 275, 0, 1, 0, 1080);
+			color: #00631a;
+			font-weight: 300;
+
+			span{
+				@include SubItem();
+			}
+		}
+	}
+	.avatar{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(138, 138, 266, 0, 172, 0, 1080);
+			img{
+				@include SubItem();
+			}
+		}
+	}
+	.terms{
+		@include Item(1085, 474, 275, 0, 93, 0);
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(801, 1162, 446, 0, 142, 0, 1080);
+		}
+
+		article{
+			@include SubItem();
+			-webkit-overflow-scrolling: touch;
+			overflow: auto;
+			padding: lp(35) lp(35);
+			background: #ececec;
+			color: #00631a;
+		}
+		-webkit-overflow-scrolling: touch;
+
+		.options{
+			input{
+				display: none;
+				&:checked + span{
+					color: #fff;
+					background: #00631a;
+				}
+			}
+			.check{
+				>span{
+					border: 3px solid #00631a;
+					font-weight: 300;
+					border-radius: 30px;
+					border-radius: vw3840(30, 1080);
+					transition-duration: 0.25s;
+					padding: 0 0.5em;
+				}
+			}
+
+			&+p{
+				margin-top: 75px;
+			}
+		}
+	}
+	.next{
+		@include Item(142, 61, 167, 0, 566, 0);
+		margin-top: calc(50vh + #{lp(167-40)});
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(250, 100, 1662, 0, 420, 0, 1080);
+		}
+		color: #00631a;
+		span{
+			@include SubItem();
+			color: #00631a;
+			border: 3px solid #00631a;
+		}
+		&:hover{
+			span{
+				color: #fff;
+				background: #00631a;
+				transition-duration: 0.25s;
+			}
+		}
+	}
+
+	.mCSB_dragger_bar{
+		background: rgba(0,0,0,0.75);
+	}
+	.mCSB_1_scrollbar{
+		// transform: scale(0.9);
+	}
+	.countdown{
+		@include SubItem();
+		position:fixed;
+		z-index: 10;
+		background: url(../img/countdown.png) center/ lp(446) auto no-repeat rgba(0,0,0,0.7);
+
+		@media screen and (max-width: #{$screen-md-num}px) {			
+			background: url(../img/countdown@32.png) center/ lp(801, 1080) auto no-repeat rgba(0,0,0,0.7);
+		}
+		@include animation(
+			page-out 0.5s 1 linear forwards
+		);
+		p{
+			@include SubItem();
+			color: #535353;
+		}
+
+		.ok{
+			@include Item(142, 61, 167, 0, 566, 0);
+			margin-top: calc(50vh + #{lp(167-40)});
+			@media screen and (max-width: #{$screen-md-num}px) {
+				@include Item(536, 100, 15, 0, 276, 0, 1080);
+				margin-top: calc(50vh + #{lp(210, 1080)});
+			}
+			color: #00631a;
+			span{
+				@include SubItem();
+				color: #00631a;
+				border: 3px solid #00631a;
+			}
+			&:hover{
+				span{
+					color: #fff;
+					background: #00631a;
+					transition-duration: 0.25s;
+				}
+			}
+		}
+		.dismiss{
+			@include Item(60, 60, 163, 0, 780, 0);
+			margin-top: calc(50vh + #{lp(-180)});
+			@media screen and (max-width: #{$screen-md-num}px) {
+				@include Item(98, 98, -163, 0, 800, 0, 1080);
+				margin-top: calc(50vh + #{lp(-330, 1080)});
+			}
+			img{
+				@include SubItem();
+				&.hover{
+					transition-duration: 0.25s;
+					opacity: 0;
+				}
+			}
+			&:hover{
+				.hover{
+					opacity: 1;
+				}
+			}
+		}
+		.secs{
+			color: #00631a;
+			line-height: 1em;
+			font-weight: 700;
+		}
+
+		&.in{
+
+			@include animation(
+				page-in 0.5s 1 linear forwards
+			);
+		}
+	}
+}

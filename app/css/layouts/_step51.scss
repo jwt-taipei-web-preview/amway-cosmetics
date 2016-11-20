@@ -1,0 +1,33 @@
+#step51{
+	.avatar{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(138, 138, 266, 0, 172, 0, 1080);
+			img{
+				@include SubItem();
+			}
+		}
+	}
+	.terms{
+		@include Item(1085, 474, 275, 0, 93, 0);
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(801, 948, 446, 0, 142, 0, 1080);
+		}
+
+		article{
+			@include SubItem();
+			-webkit-overflow-scrolling: touch;
+			overflow: auto;
+			padding: lp(35) lp(35);
+			background: #ececec;
+			color: #00631a;
+		}
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.mCSB_dragger_bar{
+		background: rgba(0,0,0,0.75);
+	}
+	.mCSB_1_scrollbar{
+		// transform: scale(0.9);
+	}
+}

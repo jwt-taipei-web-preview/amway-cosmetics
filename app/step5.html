@@ -5,20 +5,17 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>體重管理</title>
-
     <meta property="og:title" content="體重管理"/>
     <meta property="og:description" content=""/>
     <meta property="og:url" content=""/>
     <meta property="og:image" content=""/>
     <link rel="apple-touch-icon" href="">
     <!-- Place favicon.ico in the root directory -->
-
     <!-- build:css css/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" />
     <!-- endbower -->
     <!-- endbuild -->
-
     <!-- build:css css/main.css -->
     <link rel="stylesheet" href="css/main.css">
     <!-- endbuild -->
@@ -30,58 +27,84 @@
   </head>
   <body>
     <!--[if lt IE 10]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
     <section class="container">
-
-
-
       <!--step5-->
       <section id="step5" class="page">
         <figure class="background">
-          <img src="img/step-4.jpg">
+          <img class="hidden-md" src="img/step-4.jpg">
+          <img class="hidden-lg" src="img/step-4@32.jpg">
+          <h3 class="hidden-lg word text-center fontsize-md-62">
+            <span>首先，請閱讀<br>勾選同意書</span>
+          </h3>
+          <figure class="hidden-lg avatar">
+            <img src="img/pic.png">
+          </figure>
           <aside class="terms">
             <article>
               <aside>
-                <h3 class="text-center fontsize-31">個資聲明與隱私資訊同意條款</h3>
-                <p class="fontsize-21">為將本次評估的完整資料與未來相關的資訊傳送至您手機，需要請您同意以下內容：</p>
-                <p class="fontsize-21">安麗日用品股份有限公司(下稱本公司)依個人資料保護法等相關法令規定，在體重管理服務的特定目的範圍內蒐集您直銷商/會員編號、手機電話號碼、體重、肌肉量、脂肪量、體脂率、BMI、基礎代謝率、性別、年齡；針對您的個人資料，本公司只會在達成上述目的所需的範圍內處理或利用，並於上述特定目的消失且經您提出的書面要求後予以刪除。</p>
+                <h3 class="text-center fontsize-md-37">個資聲明與隱私資訊同意條款</h3>
+                <p class="fontsize-21  fontsize-md-31">為將本次評估的完整資料與未來相關的資訊傳送至您手機，需要請您同意以下內容：</p>
+                <p class="fontsize-21  fontsize-md-31">安麗日用品股份有限公司(下稱本公司)依個人資料保護法等相關法令規定，在體重管理服務的特定目的範圍內蒐集您直銷商/會員編號、手機電話號碼、體重、肌肉量、脂肪量、體脂率、BMI、基礎代謝率、性別、年齡；針對您的個人資料，本公司只會在達成上述目的所需的範圍內處理或利用，並於上述特定目的消失且經您提出的書面要求後予以刪除。</p>
                 <br>
-                <p class="fontsize-21">本公司蒐集您的個人資料，原則上僅會以電子檔形式供本公司、委外廠商或與本公司具有合作委任等關係之第三人處理及利用；惟由於本公司屬跨國企業並允許國際推薦，為達成與您之間的契約目的或促進/保存您的合法權益，您的個人資料亦會於本公司各集團企業所在地被處理及利用。本公司保有您的個人資料，基於個人資料保護法之規定，您可以依法行使下述的權利：</p>
-                <ol class="fontsize-21">
+                <p class="fontsize-21  fontsize-md-31">本公司蒐集您的個人資料，原則上僅會以電子檔形式供本公司、委外廠商或與本公司具有合作委任等關係之第三人處理及利用；惟由於本公司屬跨國企業並允許國際推薦，為達成與您之間的契約目的或促進/保存您的合法權益，您的個人資料亦會於本公司各集團企業所在地被處理及利用。本公司保有您的個人資料，基於個人資料保護法之規定，您可以依法行使下述的權利：</p>
+                <ol class="fontsize-21  fontsize-md-31">
                   <li>查詢或請求閱覽您的個人資料。</li>
                   <li>請求製給您的個人資料複製本。</li>
                   <li>請求補充或更正您的個人資料。</li>
                   <li>請求停止收集、處理或利用您的個人資料。</li>
                   <li>請求刪除您的個人資料。</li>
                 </ol>
-                <p class="fontsize-21">您欲行使上述提及的相關權利時，可撥打本公司顧客服務專線(03)353-7800，將有專人為您服務。</p>
-                <p class="fontsize-21">本公司基於上述原因而蒐集、處理或利用您的個人資料，您可以自由選擇是否提供您的個人資料。</p>
-                <p class="fontsize-21">若您選擇不提供個人資料或是提供不完全時，將無法使用本系統及其相關的各種服務。</p>
+                <p class="fontsize-21  fontsize-md-31">您欲行使上述提及的相關權利時，可撥打本公司顧客服務專線(03)353-7800，將有專人為您服務。</p>
+                <p class="fontsize-21  fontsize-md-31">本公司基於上述原因而蒐集、處理或利用您的個人資料，您可以自由選擇是否提供您的個人資料。</p>
+                <p class="fontsize-21  fontsize-md-31">若您選擇不提供個人資料或是提供不完全時，將無法使用本系統及其相關的各種服務。</p>
               </aside>
             </article>
           </aside>
           <a class="agree" href="javascript:">
-            <figure></figure>
+            <label for="agree" class="vertical-middle">
+              <figure>
+                <input type="radio" name="agree" id="agree">
+                <img src="img/checked.png">
+                <img class="hover" src="img/checked-hover.png">
+              </figure>
+              <span class="text">
+                <span class="fontsize-45 fontsize-md-62 visible-md visible-inline-lg">我同意</span><span class="fontsize-31 fontsize-md-37">收到檢測報告<br>和未來產品相關訊息</span>
+              </span>
+            </label>
           </a>
           <a class="disagree" href="javascript:">
-            <figure></figure>
+            <label for="disagree" class="vertical-middle">
+              <figure>
+                <input type="radio" name="agree" id="disagree">
+                <img src="img/checked.png">
+                <img class="hover" src="img/checked-hover.png">
+              </figure>
+              <span class="text">
+                <span class="fontsize-45 fontsize-md-62 visible-md visible-inline-lg">我不同意, </span><span class="fontsize-31 fontsize-md-37">但想體驗<br>不想收到任何訊息</span>
+              </span>
+            </label>
           </a>
-          <aside class="countdown">
-            <span class="secs">
-              <span>20</span>
-            </span>
-            <a class="dismiss" href="javascript:"></a>
-            <a class="ok" href="javascript:"></a>
+          <aside class="countdown in">
+            <p class="vertical-middle text-center fontsize-31 fontsize-md-52">
+              <span>
+                請閱讀並勾選同意書<br>若未選擇，20秒後將跳回首頁<br>
+                <span class="secs fontsize-50">20</span>
+              </span>
+            </p>
+            <a class="dismiss" href="javascript:">
+              <img class="hidden-md" src="img/alert-x.png">
+              <img class="hidden-lg" src="img/alert-x@32.png">
+            </a>
+            <a class="ok fontsize-35 fontsize-md-52 text-center" href="javascript:"><span>確定</span></a>
           </aside>
         </figure>
       </section>
       <!--./step5-->
-
     </section>
     
-
     <!-- build:js js/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
@@ -108,9 +131,6 @@
     
     <!-- build:js js/main.js -->
     <script src="js/app.js"></script>
-    <!-- endbuild -->
-    <!-- build:js js/step5.js -->
-    <script src="js/step5.js"></script>
     <!-- endbuild -->
   </body>
 </html>

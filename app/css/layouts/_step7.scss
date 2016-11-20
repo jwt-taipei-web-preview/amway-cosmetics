@@ -1,0 +1,46 @@
+#step7{
+	color: #00631a;
+
+	.word{
+		@include Item(1280, 86, 219, 0, 1, 0, 1280);
+		font-weight: 300;
+
+		span{
+			@include SubItem();
+		}
+	}
+	.s1,.s2,.s3{
+		aside{
+			@include SubItem();
+			.text{
+				color: #363636;
+			}
+		}
+	}
+	.s1{
+		@include Item(250, 61, 362, 0, 91, 0, 1280);
+	}
+	.s2{
+		@include Item(320, 62, 362, 0, 470, 0, 1280);
+	}
+	.s3{
+		@include Item(350, 61, 362, 0, 886, 0, 1280);
+	}
+	.start{
+		@include Item(176, 72, 672, 0, 552, 0);
+		color: #00631a;
+		border: 3px solid #006319;
+		cursor: pointer;
+
+		span{
+			@include SubItem();
+			line-height: 2em;
+			font-weight: 300;
+		}
+		&:hover{
+			transition-duration: 0.25s;
+			color: #fff;
+			background: #08651c;
+		}
+	}
+}

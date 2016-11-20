@@ -1,0 +1,94 @@
+#step0{
+	#yes{
+		color: #60821a;
+		@include Item(270, 270, 875, 0, 181, 0, 1080);
+		img{
+			@include SubItem();
+			&.hover{
+				opacity: 0;				
+			}
+			transition-duration: 0.25s;
+		}
+		span{
+			width: 100%;
+		}
+		&:hover{
+			img.hover{
+				opacity: 1;
+			}
+		}
+	}
+	#no{
+		color: #60821a;
+		@include Item(270, 270, 875, 0, 635, 0, 1080);
+		img{
+			@include SubItem();
+			&.hover{
+				opacity: 0;				
+			}
+			transition-duration: 0.25s;
+		}
+		span{
+			width: 100%;
+		}
+		&:hover{
+			img.hover{
+				opacity: 1;
+			}
+		}
+	}
+	.question{
+		color: #00631a;
+		@include Item(1280, 0, 576, 0, 1, 0);
+		span{
+			@include SubItem();
+		}
+	}
+	.alert{
+		@include SubItem();
+		position:fixed;
+		z-index: 10;
+		background: url(../img/alert@32.jpg) center/ lp(801, 1080) auto no-repeat rgba(0,0,0,0.7);
+		@include animation(
+			page-out 0.5s 1 linear forwards
+		);
+		p{
+			@include SubItem();
+			color: #535353;
+		}
+		.ok{
+			@include Item(250, 100, 15, 0, 420, 0, 1080);
+			margin-top: calc(50vh + #{lp(150, 1080)});
+			color: #00631a;
+			span{
+				@include SubItem();
+				color: #00631a;
+				border: 3px solid #00631a;
+			}
+			&:hover{
+				span{
+					color: #fff;
+					background: #00631a;
+					transition-duration: 0.25s;
+				}
+			}
+		}
+		.dismiss{
+			@include Item(98, 98, -163, 0, 800, 0, 1080);
+			margin-top: calc(50vh + #{lp(-260, 1080)});
+			img{
+				@include SubItem();
+			}
+		}
+
+		&.in{
+
+			@include animation(
+				page-in 0.5s 1 linear forwards
+			);
+		}
+	}
+	@media screen and (min-width: #{$screen-lg-num}px) {
+		display: none;
+	}
+}
