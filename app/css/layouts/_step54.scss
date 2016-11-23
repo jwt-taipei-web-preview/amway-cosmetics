@@ -1,0 +1,75 @@
+#step54{
+	.word{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(1080, 0, 275, 0, 350, 0, 1080);
+			color: #00631a;
+			font-weight: 300;
+
+			span{
+				@include SubItem();
+			}
+		}
+	}
+	.avatar{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(138, 138, 266, 0, 172, 0, 1080);
+			img{
+				@include SubItem();
+			}
+		}
+	}
+	article{
+		@include Item(810, 1210, 430, 0, 172, 0, 1080);
+		overflow-x: hidden;
+		overflow-y: auto;
+		>section{
+			@include SubItem();
+		}
+		h4{
+			background: url(../img/analytic-bg.png) no-repeat;
+			width: 100%;
+			padding-top: lp(87,810);
+			position: relative;
+			margin-bottom: lp(35,810);
+			margin-top: 0;
+			span{
+				@include SubItem();
+				line-height: 1.5em;
+				padding-left: lp(50,810);
+				color: #fff;
+				font-weight: 300;
+			}
+		}
+		p{
+			color: #08651c;
+			margin-bottom: lp(35,810);
+			margin-top: 0;
+		}
+	}
+
+	.next{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(250, 100, 1663, 0, 403, 0, 1080);
+		}
+		color: #00631a;
+		span{
+			@include SubItem();
+			color: #00631a;
+			border: 3px solid #00631a;
+		}
+		&:hover{
+			span{
+				color: #fff;
+				background: #00631a;
+				transition-duration: 0.25s;
+			}
+		}
+	}
+
+	.mCSB_dragger_bar{
+		background: rgba(0,0,0,0.75);
+	}
+	.mCSB_1_scrollbar{
+		// transform: scale(0.9);
+	}
+}

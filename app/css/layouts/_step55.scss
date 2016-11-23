@@ -1,0 +1,103 @@
+#step55{
+	.avatar{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(138, 138, 266, 0, 172, 0, 1080);
+			img{
+				@include SubItem();
+			}
+		}
+	}
+	.terms{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(801, 1136, 446, 0, 141, 0, 1080);
+		}
+
+		article{
+			@include SubItem();
+			-webkit-overflow-scrolling: touch;
+			overflow: auto;
+			background: #ececec;
+			color: #08651c;
+			h3{
+				font-weight: 500;
+				margin-top: 0.5em;
+				margin-bottom: 0;
+			}
+			h4{
+				font-weight: 300;
+				margin-top: 1em;
+				margin-bottom: 0;
+			}
+			.stars{				
+				margin-top: 5em;
+				margin-bottom: 0;
+				direction: rtl;
+				position: relative;
+				.star{
+					display: inline-block;
+					position: relative;
+					width: lp(79, 801);
+					padding-top: lp(74, 801);
+					img{
+						@include SubItem();
+					}
+					.full{
+						opacity: 0;
+						transition-duration: 0.25s;
+					}
+					&:hover, &.active{
+						.full, ~ .star .full{
+							opacity: 1;
+						}
+					}
+				}
+				&.disabled{
+					&:after{
+						@include SubItem();
+						content: '';
+					}
+				}
+			}
+			figure{
+				margin-top: 5em;
+				text-align: center;
+			}
+		}
+
+		.star{
+			width: lg(79, 633)
+			img{
+				opacity: 0;
+			}
+			.full{
+
+			}
+		}
+	}
+
+	.next{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(250, 100, 1663, 0, 403, 0, 1080);
+		}
+		color: #00631a;
+		span{
+			@include SubItem();
+			color: #00631a;
+			border: 3px solid #00631a;
+		}
+		&:hover{
+			span{
+				color: #fff;
+				background: #00631a;
+				transition-duration: 0.25s;
+			}
+		}
+	}
+
+	.mCSB_dragger_bar{
+		background: rgba(0,0,0,0.75);
+	}
+	.mCSB_1_scrollbar{
+		// transform: scale(0.9);
+	}
+}

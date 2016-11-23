@@ -2,14 +2,22 @@
 	color: #00631a;
 
 	.word{
-		@include Item(1280, 86, 219, 0, 1, 0, 1280);
+		@include Item(1280, 86, 125, 0, 1, 0, 1280);
 		font-weight: 300;
 
 		span{
 			@include SubItem();
 		}
 		aside{
+			position: relative;
 			color: #636363;
+			line-height: 1.8em;
+			span{
+				color: #00631a;
+				width: percentage(175/1280);
+				display: inline-block;
+				position: relative;
+			}
 		}
 	}
 	.alert{

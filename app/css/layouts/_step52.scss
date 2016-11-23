@@ -52,8 +52,9 @@
 					padding: 0 0.5em;
 				}
 			}
-
-			&+p{
+		}
+		ol{
+			li+li{
 				margin-top: 75px;
 			}
 		}

@@ -1,4 +1,36 @@
 #step53{
+	.word{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(1080, 0, 275, 0, 350, 0, 1080);
+			color: #00631a;
+			font-weight: 300;
+
+			span{
+				@include SubItem();
+			}
+		}
+	}
+	.type{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(700, 0, 625, 0, 220, 0, 1080);
+			color: #08651c;
+
+			span{
+				@include SubItem();
+			}
+		}
+	}
+	.typepre{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(1080, 0, 503, 0, 220, 0, 1080);
+			color: #626262;
+			font-weight: 300;
+
+			span{
+				@include SubItem();
+			}
+		}
+	}
 	.avatar{
 		@media screen and (max-width: #{$screen-md-num}px) {
 			@include Item(138, 138, 266, 0, 172, 0, 1080);
@@ -8,20 +40,91 @@
 		}
 	}
 	.terms{
-		@include Item(1085, 474, 275, 0, 93, 0);
 		@media screen and (max-width: #{$screen-md-num}px) {
-			@include Item(801, 948, 446, 0, 142, 0, 1080);
+			@include Item(633, 1060, 850, 0, 200, 0, 1080);
 		}
 
 		article{
 			@include SubItem();
 			-webkit-overflow-scrolling: touch;
 			overflow: auto;
-			padding: lp(35) lp(35);
-			background: #ececec;
-			color: #00631a;
+			color: #2e2522;
+
+			.header{
+				display: block;
+				height: 2em;
+				span {
+					border-left: 1px solid #2e2522;
+					line-height: 0.8em;
+					display: inline-block;
+					padding-left: lp(15, 633);
+					// padding-right: lp(42, 633);
+					margin-top: lp(35, 633);
+					left: 0;
+					position: absolute;
+					&:nth-child(2){
+						margin-left: lp(220, 633);
+					}
+					&:nth-child(3){
+						margin-left: lp(417, 633);
+					}
+				}
+				border-bottom: 1px solid #2e2522;
+			}
+
+			.scale{
+				line-height: 1em;
+				display: block;
+				margin-top: lp(35, 633);
+				height: 100px;
+				white-space: nowrap;
+				background: url(../img/bar.png) no-repeat left bottom;
+			}
 		}
 		-webkit-overflow-scrolling: touch;
+	}
+	.bar{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(730, 87, 762, 0, 201, 0, 1080);
+		}
+		img{
+			@include SubItem();
+		}
+		figcaption{
+			@include Item(303, 46, 7, 0, 46, 0, 730);
+			span{
+				@include SubItem();
+				color: #fff;
+			}
+		}
+
+	}
+	.girl{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(247, 325, 462, 0, 619, 0, 1080);
+		}
+		img{
+			@include SubItem();
+		}
+	}
+
+	.next{
+		@media screen and (max-width: #{$screen-md-num}px) {
+			@include Item(250, 100, 1663, 0, 403, 0, 1080);
+		}
+		color: #00631a;
+		span{
+			@include SubItem();
+			color: #00631a;
+			border: 3px solid #00631a;
+		}
+		&:hover{
+			span{
+				color: #fff;
+				background: #00631a;
+				transition-duration: 0.25s;
+			}
+		}
 	}
 
 	.mCSB_dragger_bar{
