@@ -57,34 +57,38 @@
 	@return percentage($pixels/$context);
 }
 
-@mixin Item($width, $height, $top, $bottom, $left, $right) {
+@function em($pixels, $base: $font-size-base-num){
+	@return #{$pixels/$base}em;
+}
+
+@mixin Item($width, $height, $top, $bottom, $left, $right, $context: 3840) {
 	margin: 0;
-	width: lp($width);
+	width: lp($width, $context);
 	height: 0;
 	position: absolute;
-	padding-top: lp($height);
+	padding-top: lp($height, $context);
 
-	@if($left > 0) {
-		margin-left: lp($left);
+	@if($left != 0) {
+		margin-left: lp($left, $context);
 		left: 0;
 		right: 0;
-		margin-right: lp($right);
+		margin-right: lp($right, $context);
 		z-index: 2;
 	}@else{
 		right: 0;
 		left: auto;
-		margin-right: lp($right);
+		margin-right: lp($right, $context);
 		z-index: 1;
 	}
-	@if($top > 0) {
+	@if($top != 0) {
 		top: 0;
 		bottom: 0;
-		margin-top: lp($top);
-		margin-bottom: lp($bottom);
+		margin-top: lp($top, $context);
+		margin-bottom: lp($bottom, $context);
 	}@else{
 		bottom: 0;
 		top: auto;
-		margin-bottom: lp($bottom);
+		margin-bottom: lp($bottom, $context);
 	}
 }
 .vertical-top{

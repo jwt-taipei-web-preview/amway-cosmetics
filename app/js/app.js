@@ -58,7 +58,11 @@ $(function(){
 
 	function imageLoaded(){
 		$.each(elements, function(index, ele){
-			$(ele).attr('src', $(ele).attr('data-src'));
+			if(ele.tagName.toLowerCase() === 'img'){
+				$(ele).attr('src', $(ele).attr('data-src'));
+			}else{
+				$(ele).css('background-image', 'url(' + $(ele).attr('data-src') + ')');
+			}
 		});
 
 		$('.page:eq(0)').addClass('init');
