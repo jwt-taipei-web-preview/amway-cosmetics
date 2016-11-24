@@ -32,16 +32,32 @@
 			text-decoration: none;
 
 			&:after{
+				transition: transform 0.3s linear 0s;
 				@include Item(84, 84, -11, 0, 371, 0, 391);
 				content: '';
 				background: url(../img/collapse-btn.png) no-repeat center/cover;
 			}
 		}
+		&.in + ul{
+			height: auto;
+			min-height: 5em;
+			opacity: 1;
+			margin-top: lp(87, 640);
+			transition: margin-top 0s linear 0s, height 0s linear 0s, opacity 0.25s linear 0s;
+		}
+		&.in{
+			a:after{
+				transform: rotateX(-180deg);
+			}
+		}
 	}
 	ul{
 		padding: lp(20, 640);
-		margin-top: lp(87, 640);
 		margin-left: lp(77, 640);
+		margin-top: 0;
+		opacity: 0;
+		height: 0;
+		transition: height 0s linear 0.25s, opacity 0.25s linear 0s;
 		li{
 			line-height: 1em;
 			list-style: none;
