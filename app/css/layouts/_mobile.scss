@@ -1,0 +1,119 @@
+#mobile{
+	background-size: 100% auto;
+	background-position: center top;
+	position: relative;
+	width: auto;
+
+	.welcome{
+		color: #b89d5b;
+		margin-top: lp(423, 640);
+		line-height: 1.5;
+		font-weight: 300;
+	}
+
+	.picture{
+		@include Item(486, 594, 99, 0, 77, 0, 640);
+		position: relative;
+		img{
+			@include SubItem();
+		}
+	}
+	.collapse-btn{
+		// margin: lp(77, 640) lp(87, 640);
+		@include Item(391, 62, 87, 0, 77, 0, 640);
+		position: relative;		
+		font-weight: 300;
+		background: url(../img/collapse-bar.png) no-repeat;
+		a{
+			@include SubItem();			
+			line-height: em(70,37);
+			padding-left: lp(28, 640);
+			color: #fff;
+			text-decoration: none;
+
+			&:after{
+				@include Item(84, 84, -11, 0, 371, 0, 391);
+				content: '';
+				background: url(../img/collapse-btn.png) no-repeat center/cover;
+			}
+		}
+	}
+	ul{
+		padding: lp(20, 640);
+		margin-top: lp(87, 640);
+		margin-left: lp(77, 640);
+		li{
+			line-height: 1em;
+			list-style: none;
+			a{
+				color: #fff;
+				text-decoration: none;
+				transition-duration: 0.25s;
+				&:after{
+					content:'▶';
+					color: #c69633;
+					margin-left: lp(28, 640);
+				}
+				&:hover{
+					color: #c69633;
+				}
+			}
+			&+li{
+				margin-top: lp(37, 640);
+			}
+		}
+	}
+	.recommend-title{
+		@include Item(518, 62, 64, 0, 74, 0, 640);
+		position: relative;
+		font-weight: 300;
+		background: url(../img/recomm.png) no-repeat;
+		span{
+			@include SubItem();			
+			line-height: em(70,37);
+			padding-left: lp(28, 640);
+			color: #fff;
+		}
+	}
+	.recommend{
+		@include Item(518, 0, 60, 0, 77, 0, 640);
+		position: relative;
+		height: auto;
+		padding-left: lp(20, 640);
+		a{
+			line-height: 1.8;
+			color: #fff;
+			text-decoration: none;
+			transition-duration: 0.25s;
+			display: block;
+			&:after{
+				content:'▶';
+				color: #c69633;
+				margin-left: lp(28, 640);
+			}
+			&:hover{
+				color: #c69633;
+			}
+		}
+		span{
+			color: #fff;
+			line-height: 1.8;
+		}
+	}
+	.product{
+		@include Item(511, 782, 36, 0, 63, 0, 640);
+		position: relative;
+		img{
+			@include SubItem();
+		}
+	}
+	footer{
+		@include Item(640, 489, -1, 0, -1, 0, 640);
+		position: relative;
+		aside{
+			@include SubItem();	
+			color: #fff;
+			font-weight: 300;
+		}
+	}
+}
