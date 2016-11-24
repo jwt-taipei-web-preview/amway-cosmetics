@@ -6,5 +6,7 @@
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
 /*global app, $ */
 app.partial.mobile = function(page){
-
+	$('.collapse-btn').on('click', function(){
+		$(this).toggleClass('in');
+	});
 };

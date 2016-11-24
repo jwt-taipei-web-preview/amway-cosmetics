@@ -13,7 +13,7 @@ app.partial.step4 = function(page){
 	});
 	// $(page).on('page:in', function(e){
 		timeout = setTimeout(function(){
-			goto('step5');
+			// goto('step5');
 		}, 5000);
 	// });
 };

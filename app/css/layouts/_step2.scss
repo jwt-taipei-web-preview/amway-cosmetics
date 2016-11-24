@@ -1,0 +1,17 @@
+#step2{
+	#idonthave{
+		@include Item(943, 176, 2193, 0, 2766, 0);
+		img{
+			@include SubItem();
+		}
+		.hover{
+			opacity: 0;
+			transition-duration: 0.25s;
+		}
+		&:hover{			
+			.hover{
+				opacity: 1;
+			}
+		}
+	}
+}
