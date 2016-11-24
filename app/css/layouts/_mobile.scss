@@ -67,7 +67,7 @@
 		@include Item(518, 62, 64, 0, 74, 0, 640);
 		position: relative;
 		font-weight: 300;
-		background: url(../img/recomm.png) no-repeat;
+		background: url(../img/recomm.png) no-repeat 0 0/100% auto;
 		span{
 			@include SubItem();			
 			line-height: em(70,37);
