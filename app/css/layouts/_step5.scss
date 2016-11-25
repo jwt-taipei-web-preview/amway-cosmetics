@@ -44,44 +44,4 @@
 	.mCSB_1_scrollbar{
 		// transform: scale(0.9);
 	}
-
-	.countdown{
-		@include SubItem();
-		position:fixed;
-		z-index: 10;
-		background: url(../img/countdown.jpg) center/ lp(1470) auto no-repeat rgba(0,0,0,0.7);
-
-		@include animation(
-			page-out 0.5s 1 linear forwards
-		);
-
-		.ok{
-			@include Item(386, 183, 1675, 0, 1740, 0);
-			margin-top: calc(50vh + #{lp(395)});
-		}
-		.dismiss{
-			@include Item(180, 180, 1675, 0, 2428, 0);
-			margin-top: calc(50vh + #{lp(-633)});
-		}
-		.secs{
-			@include Item(365, 225, 1250, 0, 1734, 0);
-			margin-top: calc(50vh + #{lp(0)});
-			font-size: vw3840(318);
-			color: #6d5a33;
-			line-height: 1em;
-			font-weight: 700;
-			text-align: center;
-
-			span{
-				@include SubItem();
-			}
-		}
-
-		&.in{
-
-			@include animation(
-				page-in 0.5s 1 linear forwards
-			);
-		}
-	}
 }

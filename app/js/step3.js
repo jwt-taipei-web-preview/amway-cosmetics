@@ -65,5 +65,12 @@ app.partial.step3 = function(page){
 	function dismissAlert(){
 		$('.alert', page).removeClass('in');
 	}
-	// window.showAlert = showAlert;
+	var selectTimeout = app.selectTimeout;
+	function next(sec){
+		clearTimeout(selectTimeout);
+		selectTimeout = setTimeout(function(){
+			app.showCountdown();
+		}, sec * 1000);
+	}
+	next(app.tickTimeout);
 };

@@ -16,6 +16,60 @@ var debug = /localhost[:]9000|nelson119.github.io/.test(location.href);
 
 
 $(function(){
+
+	var page = $('.page:eq(0)');
+	var selectTimeout = 0;
+
+	var tickTimeout = 10;
+
+	$('.countdown', page).on('page:in', function(e){
+		var tl = new TimelineMax({
+			paused: true,
+			onComplete: function(){
+				goto('index');
+			}
+		});
+		var sec = 20;
+					// console.log(sec)
+		for(var i=20; i>0; i--){
+			tl.addPause('+=' + 1, function(){
+				sec--;
+				if(sec >= 0){
+					$('.countdown .secs span', page).html(sec);
+				}
+				tl.play();
+			});
+		}
+		tl.play();
+		$('.dismiss, .ok', page).one('click', function(){
+			app.dismissCountdown();
+			tl.stop();
+			clearTimeout(selectTimeout);
+			selectTimeout = setTimeout(function(){
+				app.showCountdown();
+			}, app.tickTimeout * 1000);
+		});
+		e.stopPropagation();
+	});
+
+	app.showCountdown = function (){
+		$('.countdown .secs span', page).html(20);
+		$('.countdown', page).addClass('in')
+			.trigger('page:in');
+	}
+	app.dismissCountdown = function (){
+		$('.countdown', page).removeClass('in');
+	}
+	$(window).on('mousemove', function(){
+		clearTimeout(selectTimeout);
+		selectTimeout = setTimeout(function(){
+			app.showCountdown();
+		}, tickTimeout * 1000);
+	});
+
+	app.tickTimeout = tickTimeout;
+	app.selectTimeout = selectTimeout;
+
     // 定義每個section
 	$.each(app.partial, function(name, init){
 		init($('#'+name));
@@ -64,15 +118,11 @@ $(function(){
 				$(ele).css('background-image', 'url(' + $(ele).attr('data-src') + ')');
 			}
 		});
-
-		$('.page:eq(0)').addClass('init');
+		$('.page:eq(0)').addClass('init').trigger('page:in');
 	}
 });
 
 function goto(page){
-	// $('#' + page).addClass('in')
-	// 	.siblings().removeClass('in init');
-	// $('#' + page).trigger('page:in');
 	location.href = page + '.html';
 }
 
