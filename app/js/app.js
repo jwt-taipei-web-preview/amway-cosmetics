@@ -4,7 +4,7 @@
 	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
-/*global  $ */
+/*global  $, TimelineMax */
 var app = {};
 app.partial = {};
 app.pages = {};
@@ -20,7 +20,10 @@ $(function(){
 	var page = $('.page:eq(0)');
 	var selectTimeout = 0;
 
-	var tickTimeout = 10;
+//閒置出現倒數秒數
+	var tickTimeout = 120;
+//倒數秒數
+	var countdown = 20;
 
 	$('.countdown', page).on('page:in', function(e){
 		var tl = new TimelineMax({
@@ -29,9 +32,9 @@ $(function(){
 				goto('index');
 			}
 		});
-		var sec = 20;
+		var sec = countdown;
 					// console.log(sec)
-		for(var i=20; i>0; i--){
+		for(var i=countdown; i>0; i--){
 			tl.addPause('+=' + 1, function(){
 				sec--;
 				if(sec >= 0){
@@ -53,13 +56,13 @@ $(function(){
 	});
 
 	app.showCountdown = function (){
-		$('.countdown .secs span', page).html(20);
+		$('.countdown .secs span', page).html(countdown);
 		$('.countdown', page).addClass('in')
 			.trigger('page:in');
-	}
+	};
 	app.dismissCountdown = function (){
 		$('.countdown', page).removeClass('in');
-	}
+	};
 	$(window).on('mousemove', function(){
 		clearTimeout(selectTimeout);
 		selectTimeout = setTimeout(function(){
