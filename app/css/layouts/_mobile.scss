@@ -69,6 +69,10 @@
 					content:'▶';
 					color: #c69633;
 					margin-left: lp(28, 640);
+					@include animation(
+						arrow-ani 0.75s infinite linear 
+					);
+					display: inline-block;
 				}
 				&:hover{
 					color: #c69633;
@@ -106,6 +110,10 @@
 				content:'▶';
 				color: #c69633;
 				margin-left: lp(28, 640);
+				@include animation(
+					arrow-ani 0.75s infinite linear 
+				);
+				display: inline-block;
 			}
 			&:hover{
 				color: #c69633;
@@ -132,4 +140,21 @@
 			font-weight: 300;
 		}
 	}
+}
+
+
+@include keyframes( arrow-ani )
+{
+    0% {
+		transform: translateX(0%);
+    }
+    70% {
+		transform: translateX(30%);
+    }
+    80% {
+		transform: translateX(10%);
+    }
+    100% {
+		transform: translateX(0%);
+    }
 }
