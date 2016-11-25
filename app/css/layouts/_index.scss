@@ -1,3 +1,19 @@
 #index{
 	// background: url(../img/start.jpg) 0 0/cover;
+	.start-btn{
+		@include Item(525, 517, 1360, 0, 552, 0);
+		img{
+			@include SubItem();
+			opacity: 1;
+			transition-duration: 0.25s;
+		}
+	}
+	.background:hover:focus{
+		.start-btn{
+			img{
+				opacity: 0;
+			}
+		}
+
+	}
 }
