@@ -57,7 +57,7 @@ $(function(){
 
 	app.showCountdown = function (){
 		$('.countdown .secs span', page).html(countdown);
-		$('.countdown', page).addClass('in')
+		$('.countdown', page).addClass('fade in')
 			.trigger('page:in');
 	};
 	app.dismissCountdown = function (){

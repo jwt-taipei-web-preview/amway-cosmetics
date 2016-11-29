@@ -14,7 +14,7 @@
 	}
 	.keypad{
 		.key{
-			&:hover{
+			&:active{
 				&:after{
 					border-radius: 50%;
 					width: 100%;
@@ -76,9 +76,8 @@
 		position:fixed;
 		z-index: 10;
 		background: url(../img/alert.jpg) center/ lp(1470) auto no-repeat rgba(0,0,0,0.7);
-		@include animation(
-			page-out 0.5s 1 linear forwards
-		);
+		opacity: 0;
+		display: none;
 
 		.ok{
 			@include Item(447, 202, 237, 0, 1708, 0);
@@ -88,12 +87,20 @@
 			@include Item(180, 180, 1675, 0, 2428, 0);
 			margin-top: calc(50vh + #{lp(-633)});
 		}
+		&.fade{
 
-		&.in{
+			display: block;
 
 			@include animation(
-				page-in 0.5s 1 linear forwards
+				page-out 0.5s 1 linear forwards
 			);
+			&.in{
+
+				@include animation(
+					page-in 0.5s 1 linear forwards
+				);
+			}
+
 		}
 	}
 }
