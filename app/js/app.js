@@ -57,8 +57,9 @@ $(function(){
 
 	app.showCountdown = function (){
 		$('.countdown .secs span', page).html(countdown);
-		$('.countdown', page).addClass('fade in')
-			.trigger('page:in');
+		$('.countdown', page).addClass('fade in').one('webkitTransitionEnd transitionEnd', function( event ) { 
+			$('.countdown', page).trigger('page:in');
+	    });
 	};
 	app.dismissCountdown = function (){
 		$('.countdown', page).removeClass('in');
@@ -102,7 +103,6 @@ $(function(){
 			});
 			// //載入後 加到背景
 			// $(background[src]).css('background-image', 'url(' + src + ')');
-
 
 
 			if(alldone){

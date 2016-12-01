@@ -58,12 +58,13 @@ app.partial.step5 = function(page){
 
 	function showCountdown(){
 		$('.countdown .secs span', page).html(20);
-		$('.countdown', page).addClass('in')
+		$('.countdown', page).addClass('fade in')
 			.trigger('page:in');
 	}
 	function dismissCountdown(){
 		$('.countdown', page).removeClass('in');
 	}
 
+	next(app.tickTimeout);
 	window.showCountdown = showCountdown;
 };
