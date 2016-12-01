@@ -45,22 +45,22 @@
 				@include Item(228, 228, 1209, 0, 2224, 0);
 			}
 			&.key6{
-				@include Item(228, 228, 1209, 0, 2505, 0);
-			}
-			&.key7{
 				@include Item(228, 228, 1501, 0, 1088, 0);
 			}
-			&.key8{
+			&.key7{
 				@include Item(228, 228, 1501, 0, 1370, 0);
 			}
-			&.key9{
+			&.key8{
 				@include Item(228, 228, 1501, 0, 1657, 0);
 			}
-			&.key0{
+			&.key9{
 				@include Item(228, 228, 1501, 0, 1943, 0);
 			}
-			&.keyx{
+			&.key0{
 				@include Item(228, 228, 1501, 0, 2224, 0);
+			}
+			&.keyx{
+				@include Item(228, 228, 1209, 0, 2505, 0);
 			}
 			&.keyclear{
 				@include Item(228, 228, 1501, 0, 2505, 0);
