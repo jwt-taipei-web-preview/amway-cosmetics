@@ -14,4 +14,43 @@
 			}
 		}
 	}
+	.alert{
+		background: url(../img/alert2.jpg) center/ lp(1714) auto no-repeat rgba(0,0,0,0.7);
+		.yes{
+			@include Item(390, 180, 1, 0, 1470, 0);
+			margin-top: calc(50vh + #{lp(395)});
+			&:after{
+				opacity: 0;
+				transition-duration: 0.25s;
+				content: '';
+				@include SubItem();
+				background: url(../img/yes.jpg) 0 0/ cover;
+			}
+			&:hover{
+				&:after{
+					opacity: 1;
+				}
+			}
+		}
+		.no{
+			@include Item(390, 180, 1, 0, 2055, 0);
+			margin-top: calc(50vh + #{lp(395)});
+			&:after{
+				opacity: 0;
+				transition-duration: 0.25s;
+				content: '';
+				@include SubItem();
+				background: url(../img/no.jpg) 0 0/ cover;
+			}
+			&:hover{
+				&:after{
+					opacity: 1;
+				}
+			}
+		}
+		.dismiss{
+			@include Item(180, 180, 1, 0, 2540, 0);
+			margin-top: calc(50vh + #{lp(-633)});
+		}
+	}
 }

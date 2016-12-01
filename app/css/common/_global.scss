@@ -109,6 +109,18 @@ html{
 		.ok{
 			@include Item(386, 183, 1675, 0, 1740, 0);
 			margin-top: calc(50vh + #{lp(395)});
+			&:after{
+				opacity: 0;
+				transition-duration: 0.25s;
+				content: '';
+				@include SubItem();
+				background: url(../img/ok2.jpg) 0 0/ cover;
+			}
+			&:hover{
+				&:after{
+					opacity: 1;
+				}
+			}
 		}
 		.dismiss{
 			@include Item(180, 180, 1675, 0, 2428, 0);
@@ -139,6 +151,64 @@ html{
 					page-in 0.5s 1 linear forwards
 				);
 			}
+		}
+	}
+
+
+	.alert{
+		@include SubItem();
+		position:fixed;
+		z-index: 10;
+		background: url(../img/alert.jpg) center/ lp(1470) auto no-repeat rgba(0,0,0,0.7);
+		opacity: 0;
+		display: none;
+
+		.ok{
+			@include Item(447, 202, 237, 0, 1708, 0);
+			margin-top: calc(50vh + #{lp(285)});
+			&:after{
+				opacity: 0;
+				transition-duration: 0.25s;
+				content: '';
+				@include SubItem();
+				background: url(../img/ok.jpg) 0 0/ cover;
+			}
+			&:hover{
+				&:after{
+					opacity: 1;
+				}
+			}
+		}
+		.dismiss{
+			@include Item(180, 180, 1675, 0, 2428, 0);
+			margin-top: calc(50vh + #{lp(-633)});
+			&:after{
+				opacity: 0;
+				transition-duration: 0.25s;
+				content: '';
+				@include SubItem();
+				background: url(../img/dismiss.png) 0 0/ cover;
+			}
+			&:hover{
+				&:after{
+					opacity: 1;
+				}
+			}
+		}
+		&.fade{
+
+			display: block;
+
+			@include animation(
+				page-out 0.5s 1 linear forwards
+			);
+			&.in{
+
+				@include animation(
+					page-in 0.5s 1 linear forwards
+				);
+			}
+
 		}
 	}
 }
