@@ -1,0 +1,55 @@
+#step6{
+	.terms{
+		@include Item(549, 492, 796, 0, 1580, 0, 3840);
+
+		article{
+			@include SubItem();
+			.stars{				
+				margin-top: 1em;
+				margin-left: lp(200, 640);
+				margin-bottom: 0;
+				direction: rtl;
+				position: relative;
+				line-height: 1.5em;
+				color: #b59e5d;
+				label{
+					display: block;
+					white-space: nowrap;
+				}
+				.star{
+					display: inline-block;
+					position: relative;
+					width: lp(85, 549);
+					padding-top: lp(85, 549);
+					& ~ span{
+						font-weight: 100;
+						font-size: vw3840(90);
+					}
+					img{
+						@include SubItem();
+					}
+					.full{
+						opacity: 0;
+						transition-duration: 0.25s;
+					}
+				}
+
+				input:checked + label .full{
+					opacity: 1;
+				}
+			}
+		}
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.mCSB_dragger_bar{
+		background: rgba(0,0,0,0.75);
+	}
+	.mCSB_1_scrollbar{
+		// transform: scale(0.9);
+	}
+
+	.countdown{
+		background: url(../img/countdown.jpg) center/ lp(1470) auto no-repeat rgba(0,0,0,0.7);
+	}
+}
