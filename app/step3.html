@@ -55,12 +55,11 @@
             <a data-key="9" class="key key9" href="javascript:"></a>
             <a data-key="0" class="key key0" href="javascript:"></a>
             <a data-key="x" class="key keyx" href="javascript:"></a>
-            <a data-key="clear" class="key keyclear" href="javascript:"></a>
-            <a class="submit" href="javascript:"></a>
+            <a class="key keyclear submit" href="javascript:"></a>
           </aside>
-          <aside class="alert">
-            <a class="dismiss" href="javascript:"></a>
-            <a class="ok" href="javascript:"></a>
+          <aside class="alert fade in">
+            <a class="dismiss" href="javascript:$('.alert').removeClass('in');void(0);"></a>
+            <a class="ok" href="javascript:$('.alert').removeClass('in');void(0);"></a>
           </aside>
           <aside class="countdown">
             <span class="secs">

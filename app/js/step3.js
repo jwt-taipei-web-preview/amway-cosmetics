@@ -26,7 +26,7 @@ app.partial.step3 = function(page){
 
 	$(page).on('page:in', function(){
 		phone = '';
-		$('.field input', page).val('');
+		$('.field input', page).val('09');
 	});
 	function phoneUpdate(key){
 
@@ -51,12 +51,8 @@ app.partial.step3 = function(page){
 			case 'x':
 				phone = phone.substr(0,phone.length - 1);
 				break;
-			case 'clear':
-				phone = '';
-				break;
-
 		}
-		$('.field input').val(phone);
+		$('.field input').val(phone || $('.field input').val());
 	}
 	function showAlert(){
 		$('.alert', page).addClass('in')
