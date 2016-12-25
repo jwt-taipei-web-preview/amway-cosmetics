@@ -130,6 +130,17 @@ gulp.task('serve:dist', () => {
   });
 });
 
+
+gulp.task('serve:vmu', () => {
+  browserSync({
+    notify: false,
+    port: 9000,
+    server: {
+      baseDir: ['vmu']
+    }
+  });
+});
+
 gulp.task('serve:test', ['js'], () => {
   browserSync({
     notify: false,

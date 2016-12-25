@@ -1,0 +1,81 @@
+
+
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>彩妝模擬</title>
+
+    <meta property="og:title" content="彩妝模擬"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:image" content=""/>
+    <link rel="apple-touch-icon" href="">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/vendor.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <section class="container">
+
+
+      <!--step3-->
+      <section id="step3" class="page">
+        <figure class="background">
+          <img data-src="img/step-3.jpg">
+          <aside class="field">
+            <input type="tel" maxlength="10">
+          </aside>
+          <aside class="keypad">
+            <a data-key="1" class="key key1" href="javascript:"></a>
+            <a data-key="2" class="key key2" href="javascript:"></a>
+            <a data-key="3" class="key key3" href="javascript:"></a>
+            <a data-key="4" class="key key4" href="javascript:"></a>
+            <a data-key="5" class="key key5" href="javascript:"></a>
+            <a data-key="6" class="key key6" href="javascript:"></a>
+            <a data-key="7" class="key key7" href="javascript:"></a>
+            <a data-key="8" class="key key8" href="javascript:"></a>
+            <a data-key="9" class="key key9" href="javascript:"></a>
+            <a data-key="0" class="key key0" href="javascript:"></a>
+            <a data-key="x" class="key keyx" href="javascript:"></a>
+            <!--VMU001-->
+            <a class="key keyclear submit" href="javascript:"></a>
+          </aside>
+          <aside class="alert fade " id="PhoneErro" style="display:none">
+            <a class="dismiss" href="javascript:$('.alert').removeClass('in');void(0);"></a>
+            <a class="ok" href="javascript:$('.alert').removeClass('in');void(0);"></a>
+          </aside>
+          <aside class="countdown">
+            <span class="secs">
+              <span>20</span>
+            </span>
+            <a class="dismiss" href="javascript:"></a>
+            <a class="ok" href="javascript:"></a>
+          </aside>
+
+        </figure>
+      </section>
+      <!--./step3-->
+
+    </section>
+    <label style="display:none" id="DeviceIPLabel">203.69.196.211</label>
+     <input name="ServerIP" type="text" id="ServerIP" style="display:none" value="http://192.168.2.8/E-Service/" />
+
+    <script src="js/vendor.js"></script>
+    
+    <script src="js/plugins.js"></script>
+    
+    <script src="js/main.js"></script>
+    <script src="js/step3.js"></script>
+</body>
+</html>
