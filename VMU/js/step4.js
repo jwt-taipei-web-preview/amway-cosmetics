@@ -1,9 +1,9 @@
-'use strict';
+ï»¿'use strict';
 /*eslint-disable new-cap, no-unused-vars,
-	no-use-before-define, no-trailing-spaces, space-infix-ops, comma-spacing,
-	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
-	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
-	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
+    no-use-before-define, no-trailing-spaces, space-infix-ops, comma-spacing,
+    no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
+    key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
+    eqeqeq, no-extend-native, quotes , no-inner-declarations*/
 /*global app, $, goto */
 
 app.partial.step4 = function (page) {
@@ -13,26 +13,26 @@ app.partial.step4 = function (page) {
         //var url = location.search;
          var url = location.search.replace("?UserName=", "").replace("?", "");
 
-         var url = window.location.toString(); //¨ú±o·í«eºô§}
-         var str = ""; //°Ñ¼Æ¤¤µ¥¸¹¥ªÃäªº­È
-         var str_value = ""; //°Ñ¼Æ¤¤µ¥¸¹¥kÃäªº­È
+         var url = window.location.toString(); //å–å¾—ç•¶å‰ç¶²å€
+         var str = ""; //åƒæ•¸ä¸­ç­‰è™Ÿå·¦é‚Šçš„å€¼
+         var str_value = ""; //åƒæ•¸ä¸­ç­‰è™Ÿå³é‚Šçš„å€¼
          if (url.indexOf("?") != -1) {
-             //¦pªGºô§}¦³"?"²Å¸¹
+             //å¦‚æœç¶²å€æœ‰"?"ç¬¦è™Ÿ
              var ary = url.split("?")[1].split("&");
-             //¨ú±o"?"¥kÃäºô§}«á§Q¥Î"&"¤À³Î¦r¦ê¦s¤Jary°}¦C ["a=1","b=2","c=3"]
+             //å–å¾—"?"å³é‚Šç¶²å€å¾Œåˆ©ç”¨"&"åˆ†å‰²å­—ä¸²å­˜å…¥aryé™£åˆ— ["a=1","b=2","c=3"]
              for (var i in ary) {
-                 //¨ú±o°}¦Cªø«×¥h¶]°j°é¡A¦p:ºô§}¦³¤T­Ó°Ñ¼Æ¡A«h·|¶]¤T¦¸
+                 //å–å¾—é™£åˆ—é•·åº¦å»è·‘è¿´åœˆï¼Œå¦‚:ç¶²å€æœ‰ä¸‰å€‹åƒæ•¸ï¼Œå‰‡æœƒè·‘ä¸‰æ¬¡
                  str = ary[i].split("=")[0];
-                 //¨ú±o°Ñ¼Æ"="¥ªÃäªº­È¦s¤JstrÅÜ¼Æ¤¤
+                 //å–å¾—åƒæ•¸"="å·¦é‚Šçš„å€¼å­˜å…¥strè®Šæ•¸ä¸­
                  if (str == "UserName") {
-                     //­Ystrµ¥©ó·Q­n§ì¨ú°Ñ¼Æ ¦p:b
+                     //è‹¥strç­‰æ–¼æƒ³è¦æŠ“å–åƒæ•¸ å¦‚:b
                      //str_value = decodeURI(ary[i].split("=")[1]);
-                     //¨ú±obµ¥¸¹¥kÃäªº­È¨Ã¸g¹L¤¤¤åÂà½X«á¦s¤Jstr_value
+                     //å–å¾—bç­‰è™Ÿå³é‚Šçš„å€¼ä¸¦ç¶“éä¸­æ–‡è½‰ç¢¼å¾Œå­˜å…¥str_value
                      //VMU002
                      //old
                      //str_value = unescape(ary[i].split("=")[1].replace(/\\/g, "%"));
                      //new
-                     str_value = unescape(ary[i].split("=")[1].replace(/\\/g, "%") + "  ¹Ù¦ñ¡A");
+                     str_value = unescape(ary[i].split("=")[1].replace(/\\/g, "%") + "  å¤¥ä¼´ï¼Œ");
                      //-------------------
                  }
              }
@@ -42,9 +42,9 @@ app.partial.step4 = function (page) {
         //old
         //$("#NameSpan").text(str_value);
         //new
-        // var Text = "  ¹Ù¦ñ¡A§A¦n\nÅwªï¨Ó¨ìARTISTRY¤Æ§©Å]Ãè";
+        // var Text = "  å¤¥ä¼´ï¼Œä½ å¥½\næ­¡è¿ä¾†åˆ°ARTISTRYåŒ–å¦é­”é¡";
          //$("#NameSpan").text(str_value + Text.toString());
-         document.getElementById("NameSpan").innerHTML = str_value + "  ±z¦n<br />Åwªï¨Ó¨ìARTISTRY¤Æ§©Å]Ãè";
+         document.getElementById("NameSpan").innerHTML = str_value + "  æ‚¨å¥½<br />æ­¡è¿ä¾†åˆ°ARTISTRYåŒ–å¦é­”é¡";
          //document.getElementById("NameSpan1").innerHTML = str_value ;
         //---------------
         //alert(name);
@@ -56,31 +56,31 @@ app.partial.step4 = function (page) {
 
 
 
-	var timeout = 0;
-	$('.gohome', page).on('click', function () {
-	    
-	        var theJSONObject = { DeviceIP: $('#DeviceIPLabel').text(), Leave_Type: '1', Leave_Method: '1', Leave_Page: 'vmu_welcome.aspx' };
-	        var jqxhr = $.ajax({
-	            url: $('#ServerIP').val()+"Device_Status_Report.aspx",
-	            //url: "http://localhost/E-Service/Device_Status_Report.aspx",
-	            processData: false,
-	            type: "POST",
-	            data: JSON.stringify(theJSONObject)
-	        });	
+    var timeout = 0;
+    $('.gohome', page).on('click', function () {
+        
+            var theJSONObject = { DeviceIP: $('#DeviceIPLabel').text(), Leave_Type: '1', Leave_Method: '1', Leave_Page: 'vmu_welcome.aspx' };
+            var jqxhr = $.ajax({
+                url: $('#ServerIP').val()+"Device_Status_Report.aspx",
+                //url: "http://localhost/E-Service/Device_Status_Report.aspx",
+                processData: false,
+                type: "POST",
+                data: JSON.stringify(theJSONObject)
+            }); 
 
-		clearTimeout(timeout);
-		location.href = "index.aspx";
-		
-	});
-	$(page).on('page:in', function (e) {
-		timeout = setTimeout(function () {
-		    location.href = "vmu_agreement.aspx";
+        clearTimeout(timeout);
+        location.href = "index.aspx";
+        
+    });
+    $(page).on('page:in', function (e) {
+        timeout = setTimeout(function () {
+            location.href = "vmu_agreement.aspx";
     //VMU002
     //old
     //  }, 5000);
     //new
-		}, 3000);
-	});
+        }, 3000);
+    });
 
 
 

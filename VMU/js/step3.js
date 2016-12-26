@@ -21,6 +21,11 @@ app.partial.step3 = function (page) {
 	var phone = '';
 	
 	$('.key', page).on('click', function () {
+		var key = $(this);
+		key.removeClass('active');
+		setTimeout(function(){
+			key.addClass('active');
+		}, 10);
 		phoneUpdate($(this).attr('data-key'));
 	});
 	$('.submit', page).on('click', function () {

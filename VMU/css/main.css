@@ -12751,7 +12751,7 @@ html .container {
   height: 100%;
   position: fixed;
   z-index: 10;
-  background: url(../img/countdown1.jpg) center/38.28125% auto no-repeat rgba(0, 0, 0, 0.7);
+  background: url(../img/countdown1.jpg) center/44.781% auto no-repeat rgba(0, 0, 0, 0.7);
   opacity: 0;
   display: none;
 }
@@ -12762,7 +12762,7 @@ html .container {
   height: 0;
   position: absolute;
   padding-top: 4.765625%;
-  margin-left: 45.3125%;
+  margin-left: 46.113%;
   left: 0;
   right: 0;
   margin-right: 0%;
@@ -12792,21 +12792,33 @@ html .container {
 }
 
 .page .countdown .dismiss {
-  margin: 0;
-  width: 4.6875%;
   height: 0;
   position: absolute;
   padding-top: 4.6875%;
-  margin-left: 63.2291666667%;
   left: 0;
   right: 0;
-  margin-right: 0%;
   z-index: 2;
   top: 0;
   bottom: 0;
-  margin-top: 43.6197916667%;
-  margin-bottom: 0%;
-  margin-top: calc(50vh + -16.484375%);
+  width: 4.6875%;
+  margin: calc(50vh + -16.584%) 0 0 66.3%;
+}
+
+.page .countdown .dismiss:after {
+  opacity: 0;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/dismiss.png) 0 0/cover;
+}
+
+.page .countdown .dismiss:hover:after {
+  opacity: 1;
 }
 
 .page .countdown .secs {
@@ -12859,7 +12871,7 @@ html .container {
   height: 100%;
   position: fixed;
   z-index: 10;
-  background: url(../img/alert.jpg) center/38.28125% auto no-repeat rgba(0, 0, 0, 0.7);
+  background: url(../img/alert.jpg) center/45.281% auto no-repeat rgba(0, 0, 0, 0.7);
   opacity: 0;
   display: none;
 }
@@ -12900,21 +12912,16 @@ html .container {
 }
 
 .page .alert .dismiss {
-  margin: 0;
-  width: 4.6875%;
   height: 0;
   position: absolute;
   padding-top: 4.6875%;
-  margin-left: 63.2291666667%;
   left: 0;
   right: 0;
-  margin-right: 0%;
   z-index: 2;
   top: 0;
   bottom: 0;
-  margin-top: 43.6197916667%;
-  margin-bottom: 0%;
-  margin-top: calc(50vh + -16.484375%);
+  width: 4.6875%;
+  margin: calc(50vh + -16.784%) 0 0 66.47%;
 }
 
 .page .alert .dismiss:after {
@@ -13182,21 +13189,16 @@ html .container {
 }
 
 #step2 .alert .dismiss {
-  margin: 0;
   width: 4.6875%;
   height: 0;
   position: absolute;
   padding-top: 4.6875%;
-  margin-left: 66.1458333333%;
   left: 0;
   right: 0;
-  margin-right: 0%;
   z-index: 2;
   top: 0;
   bottom: 0;
-  margin-top: 0.0260416667%;
-  margin-bottom: 0%;
-  margin-top: calc(50vh + -16.484375%);
+  margin: calc(50vh + -16.684%) 0 0 66.23%;
 }
 
 #step3 .field {
@@ -13260,7 +13262,7 @@ html .container {
   margin-bottom: 0%;
 }
 
-#step3 .keypad .key:active:after {
+#step3 .keypad .key.active:after {
   border-radius: 50%;
   width: 100%;
   height: 100%;
@@ -13272,10 +13274,8 @@ html .container {
   opacity: 0.5;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-}
-
-#step3 .keypad .key:active:focus {
-  background: none;
+  -webkit-animation: keyon 0.25s linear 1 forwards;
+  animation: keyon 0.25s linear 1 forwards;
 }
 
 #step3 .keypad .key.key2 {
@@ -13482,6 +13482,31 @@ html .container {
   margin-bottom: 0%;
 }
 
+
+@-webkit-keyframes keyon {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes keyon {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 #step4 .gohome {
   margin: 0;
   width: 4.765625%;
@@ -13499,6 +13524,35 @@ html .container {
   margin-bottom: 0%;
 }
 
+#step4 .next {
+  background: rgba(0, 0, 0, 0) url("../img/nextBtn.png") repeat scroll 0 0 / 100% auto;
+  bottom: 0;
+  height: 0;
+  left: 0;
+  margin: 58.75% 0 0 44.529%;
+  padding-top: 4.73958%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11.566%;
+  z-index: 2;
+}
+
+#step4 .next:after {
+  content:'';
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0) url("../img/nextBtn.png") repeat scroll 0 100% / 100% auto;
+  opacity: 0;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+}
+#step4 .next:hover:after {
+  opacity: 1;
+}
 #step4 .name {
   margin: 0;
   width: 100%;
@@ -13555,7 +13609,7 @@ html .container {
 }
 
 #step5 .terms article aside {
-  color: #b89d5b;
+  color: #fff;
   line-height: 1.8em;
   height: auto;
   font-weight: 300;
