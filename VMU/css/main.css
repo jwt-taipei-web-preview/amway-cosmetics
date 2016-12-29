@@ -13119,7 +13119,7 @@ html .container {
   height: 0;
   position: absolute;
   padding-top: 4.6875%;
-  margin-left: 38.28125%;
+  margin-left: 37.281%;
   left: 0;
   right: 0;
   margin-right: 0%;
@@ -13154,7 +13154,7 @@ html .container {
   height: 0;
   position: absolute;
   padding-top: 4.6875%;
-  margin-left: 53.515625%;
+  margin-left: 52.516%;
   left: 0;
   right: 0;
   margin-right: 0%;
@@ -13671,9 +13671,15 @@ html .container {
 }
 
 #step5 .countdown {
-  background: url(../img/countdown.jpg) center/38.28125% auto no-repeat rgba(0, 0, 0, 0.7);
+  background: url(../img/countdown.jpg) center/44.681% auto no-repeat rgba(0, 0, 0, 0.7);
 }
 
+
+#step5 .countdown .ok{
+  /*margin: calc(50vh + 8.81%) 0 0 45.03%;
+  width: 9.96%;
+  padding-top: 4.466%;*/
+}
 #step6 .terms {
   margin: 0;
   width: 14.296875%;
