@@ -32,10 +32,11 @@
 			text-decoration: none;
 
 			&:after{
+				transform: rotateX(-180deg);
 				transition: transform 0.3s linear 0s;
-				@include Item(84, 84, -11, 0, 371, 0, 391);
+				@include Item(84, 90, -11, 0, 371, 0, 391);
 				content: '';
-				background: url(../img/collapse-btn.png) no-repeat center/cover;
+				background: url(../img/collapse-btn.png) no-repeat center/100% auto;
 			}
 		}
 		&.in + ul{
@@ -47,7 +48,7 @@
 		}
 		&.in{
 			a:after{
-				transform: rotateX(-180deg);
+				transform: rotateX(0deg);
 			}
 		}
 	}
@@ -66,9 +67,10 @@
 				text-decoration: none;
 				transition-duration: 0.25s;
 				&:after{
-					content:'▶';
-					color: #c69633;
-					margin-left: lp(28, 640);
+					content:'';
+					background: url(../img/arrow.png) no-repeat 0 0/cover;
+					@include Item(25, 25, 2, 0, 28, 0, 518);
+					position: relative;
 					@include animation(
 						arrow-ani 0.75s infinite linear 
 					);
@@ -107,9 +109,10 @@
 			transition-duration: 0.25s;
 			display: block;
 			&:after{
-				content:'▶';
-				color: #c69633;
-				margin-left: lp(28, 640);
+				content:'';
+				background: url(../img/arrow.png) no-repeat 0 0/cover;
+				@include Item(25, 25, 2, 0, 28, 0, 518);
+				position: relative;
 				@include animation(
 					arrow-ani 0.75s infinite linear 
 				);
@@ -129,6 +132,7 @@
 		position: relative;
 		img{
 			@include SubItem();
+			height: auto;
 		}
 	}
 	footer{
