@@ -75,7 +75,7 @@ html{
 	left: 0;
 	top: 0;
 	overflow-y: auto;
-	opacity: 0;
+	// opacity: 0;
 
 	.background{
 		width: 100%;
@@ -84,19 +84,19 @@ html{
 		}
 	}
 
-	@include animation(
-		page-out 0.5s 1 linear forwards
-	);
-	&.in{
-		@include animation(
-			page-in 0.5s 1 linear forwards
-		);
-	}
-	&.init{
-		@include animation(
-			page-in 0s 1 linear forwards
-		);
-	}
+	// @include animation(
+	// 	page-out 0.5s 1 linear forwards
+	// );
+	// &.in{
+	// 	@include animation(
+	// 		page-in 0.5s 1 linear forwards
+	// 	);
+	// }
+	// &.init{
+	// 	@include animation(
+	// 		page-in 0s 1 linear forwards
+	// 	);
+	// }
 }
 
 /* Responsive: Portrait tablets and up */
