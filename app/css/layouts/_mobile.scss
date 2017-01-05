@@ -13,9 +13,11 @@
 
 	.picture{
 		@include Item(486, 594, 99, 0, 77, 0, 640);
+		padding-top: lp(980, 1920);
 		position: relative;
 		img{
 			@include SubItem();
+			height: auto;
 		}
 	}
 	.collapse-btn{
