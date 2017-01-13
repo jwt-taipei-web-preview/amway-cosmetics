@@ -13,6 +13,17 @@
 				height: auto;
 				font-weight: 300;
 				font-size: vw3840(58);
+				position: relative;
+
+				div{
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					content: '';
+					background: #000;
+					top: 0;
+					left: 0;
+				}
 			}
 		}
 		-webkit-overflow-scrolling: touch;

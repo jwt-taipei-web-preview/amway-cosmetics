@@ -13609,6 +13609,16 @@ html .container {
   height: auto;
   font-weight: 300;
   font-size: 1.5104166667vw;
+  position: relative;
+}
+#step5 .terms article aside:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: '';
+  /*background: #000;*/
+  top: 0;
+  left: 0;
 }
 
 #step5 .terms h3 {
